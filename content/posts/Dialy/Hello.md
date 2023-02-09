@@ -1,5 +1,5 @@
 ---
-title: "疎通テスト01"
+title: "01"
 date: 2023-02-10
 categories: ["Dialy"]
 tags: ["go", "markdown"]
