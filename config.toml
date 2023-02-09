@@ -20,7 +20,7 @@ enableHighlight = true # highlight.js option
 thumbnail = "images/author.jpg"
 name = "ryongyong"
 description = "<p>Software Engineer</p><p></p>"
-twitter = "https://twitter.com/ryongyong"
+twitter = "https://twitter.com/ryon_yon_che"
 github = "https://github.com/ryongyong"
 
 [outputs]
