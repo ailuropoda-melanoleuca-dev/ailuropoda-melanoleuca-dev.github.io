@@ -1,4 +1,4 @@
-baseURL = 'https://ryongyong.github.io/'
+baseURL = 'https://ryongyong.github.io'
 languageCode = 'en-ja'
 title = 'Ryongyong'
 theme = "hugo_theme_robust"
