@@ -1,6 +1,6 @@
 baseURL = 'https://ryongyong.github.io'
 languageCode = 'ja'
-title = 'ryongyong's Dialy'
+title = 'ryongyong\'s Dialy'
 theme = "hugo_theme_robust"
 
 
