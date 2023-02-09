@@ -1,7 +1,7 @@
 ---
-title: "Sample Page"
-date: 2021-01-01
-categories: ["hugo"]
+title: "疎通テスト"
+date: 2023-02-10
+categories: ["Dialy"]
 tags: ["go", "markdown"]
 menu: main
 ---
