@@ -1,6 +1,6 @@
 baseURL = 'https://ryongyong.github.io'
 languageCode = 'ja'
-title = 'Ryongyong'
+title = 'ryongyong's Dialy'
 theme = "hugo_theme_robust"
 
 
@@ -18,11 +18,10 @@ enableHighlight = true # highlight.js option
 
 [params.author]
 thumbnail = "images/author.jpg"
-name = "John Doe"
-description = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p><p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
-facebook = "https://www.facebook.com/daisuke.tsuji.735"
-twitter = "https://twitter.com/dim0627"
-github = "https://github.com/dim0627"
+name = "ryongyong"
+description = "<p>Software Engineer</p><p></p>"
+twitter = "https://twitter.com/ryongyong"
+github = "https://github.com/ryongyong"
 
 [outputs]
 page = [ "HTML", "AMP" ] # if you want AMP enable.
