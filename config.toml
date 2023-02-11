@@ -4,7 +4,7 @@ defaultContentLanguage = "ja"
 hasCJKLanguage = true
 title = "パンダ好き"
 theme = "hugo_theme_robust"
-mainSections = ["posts"]
+mainSections = ["post"]
 
 disqusShortname = "XYW"
 
@@ -19,9 +19,9 @@ logofontfamily = "Lobster, cursive" # Optional, Override logo font.
 enableHighlight = true # highlight.js option
 
 [params.author]
-thumbnail = "images/author.jpg"
+thumbnail = "images/l_lHA-jP_400x400.jpg"
 name = "ryongyong"
-description = "<p>パンダが好きなSoftware Engineer. 物理生まれ物理育ち.</p><p></p>"
+description = "<p>パンダが好きなSoftware Engineer.<br> 画像認識やったり, ロボットやったり, 機械学習やったり. 物理生まれ物理育ち.</p><p></p>"
 twitter = "https://twitter.com/ryon_yon_che"
 github = "https://github.com/ryongyong"
 
