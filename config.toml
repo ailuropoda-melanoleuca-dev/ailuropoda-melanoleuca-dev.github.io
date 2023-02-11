@@ -4,7 +4,7 @@ defaultContentLanguage = "ja"
 hasCJKLanguage = true
 title = "パンダ好き"
 theme = "hugo_theme_robust"
-
+mainSections = ["posts"]
 
 disqusShortname = "XYW"
 
