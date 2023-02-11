@@ -2,7 +2,7 @@ baseURL = 'https://ryongyong.github.io/'
 languageCode = 'ja'
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
-title = "ryongyong Dialy"
+title = "パンダ好き"
 theme = "hugo_theme_robust"
 
 
