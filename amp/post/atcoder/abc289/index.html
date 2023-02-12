@@ -61,28 +61,183 @@ B問題めんどくさいなと思ったのでUnion Findで殴りました。解
 それでもC,Dは典型なBit全探索とDPだったのでなんとかそれぞれ10分以内でACできたからまあいいか、となった。</p>
 <h2 id=a問題---flip>A問題 - flip</h2>
 <p><a href=https://atcoder.jp/contests/abc289/tasks/abc289_a>問題文</a></p>
-<p>文字列として読み込んで前から順番に文字ごとに見ていけばいいです。<br>
-自分の提出<a href=https://atcoder.jp/contests/abc289/submissions/38780423>ABC289-A</a></p>
+<p>文字列として読み込んで前から順番に文字ごとに見ていけばいいです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    string s ;
+    cin <span style=color:#f92672>&gt;&gt;</span> s ;  
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> s.size() ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>if</span>(s.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;0&#39;</span>) cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>1</span> ; 
+        <span style=color:#66d9ef>else</span> cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>0</span>  ; 
+    }
+    cout <span style=color:#f92672>&lt;&lt;</span> endl;
+}
+
+</code></pre></div><p><a href=https://atcoder.jp/contests/abc289/submissions/38780423>実際の提出(ABC289-A)</a></p>
 <h2 id=b問題---レ>B問題 - レ</h2>
 <p><a href=https://atcoder.jp/contests/abc289/tasks/abc289_b>問題文</a></p>
 <p>一番時間が掛かった。<br>
 連結成分出さなきゃだからUnion Find使えばよくない？となりUnion Findを貼った。<br>
 連結成分ごとに代表点と、それに連結な頂点をもつmapを作る関数を追加しておいたんだけれど、愚直にやればいいか、となり問題文通りの操作をやった。</p>
 <p>連結成分を求める(私はUnion Findを使った)あとやることは問題文の操作、ただそれだけ</p>
-<p>自分の提出<a href=https://atcoder.jp/contests/abc289/submissions/38790304>ABC289-B</a></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>UnionFind</span> {
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> d;
+    UnionFind(<span style=color:#66d9ef>int</span> n<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>)<span style=color:#f92672>:</span> d(n,<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {}
+    <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>find</span>(<span style=color:#66d9ef>int</span> x) {
+        <span style=color:#66d9ef>if</span> (d[x] <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) <span style=color:#66d9ef>return</span> x;
+        <span style=color:#66d9ef>return</span> d[x] <span style=color:#f92672>=</span> find(d[x]);
+    }
+    <span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>unite</span>(<span style=color:#66d9ef>int</span> x, <span style=color:#66d9ef>int</span> y) {
+        x <span style=color:#f92672>=</span> find(x); y <span style=color:#f92672>=</span> find(y);
+        <span style=color:#66d9ef>if</span> (x <span style=color:#f92672>==</span> y) <span style=color:#66d9ef>return</span> false;
+        <span style=color:#66d9ef>if</span> (d[x] <span style=color:#f92672>&gt;</span> d[y]) swap(x,y);
+        d[x] <span style=color:#f92672>+=</span> d[y];
+        d[y] <span style=color:#f92672>=</span> x;
+        <span style=color:#66d9ef>return</span> true;
+    }
+    <span style=color:#66d9ef>bool</span> <span style=color:#a6e22e>same</span>(<span style=color:#66d9ef>int</span> x, <span style=color:#66d9ef>int</span> y) { <span style=color:#66d9ef>return</span> find(x) <span style=color:#f92672>==</span> find(y);}
+    <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>size</span>(<span style=color:#66d9ef>int</span> x) { <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>d[find(x)];}
+
+
+    map<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span>, vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> groupCount(){
+        map<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span> , vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> groups ; 
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> d.size() ; i<span style=color:#f92672>++</span>){
+            groups[find(i)].push_back(i) ; 
+        }
+        <span style=color:#66d9ef>return</span> groups ; 
+    }
+
+};
+
+<span style=color:#75715e>//uf.uniteで連結
+</span><span style=color:#75715e>//uf.findで根を検索
+</span><span style=color:#75715e>//uf.sameで根が同じかどうか検索
+</span><span style=color:#75715e>//uf.groupCount  fisrt := 代表頂点 second := そのグループに属する頂点
+</span><span style=color:#75715e></span>
+
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N , M ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N <span style=color:#f92672>&gt;&gt;</span> M ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> A(M) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> M ; i<span style=color:#f92672>++</span>){
+        cin <span style=color:#f92672>&gt;&gt;</span> A.at(i) ; 
+        A.at(i)<span style=color:#f92672>--</span> ; 
+    }
+    UnionFind uf(N) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> M; i<span style=color:#f92672>++</span>){
+        uf.unite(A.at(i) , A.at(i)<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) ; 
+    }
+
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>bool</span><span style=color:#f92672>&gt;</span> used(N,false) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>if</span>(used.at(i) <span style=color:#f92672>==</span> false){
+            used.at(i) <span style=color:#f92672>=</span> true ; 
+            <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> ; j <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> ; j<span style=color:#f92672>--</span>){
+                <span style=color:#66d9ef>if</span>(i <span style=color:#f92672>==</span> j) <span style=color:#66d9ef>continue</span> ; 
+                <span style=color:#66d9ef>if</span>(uf.same(i , j)){
+                    cout <span style=color:#f92672>&lt;&lt;</span> j <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span>  ;
+                    used.at(j) <span style=color:#f92672>=</span> true ;
+                }
+            }
+            cout <span style=color:#f92672>&lt;&lt;</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span> ; 
+        }
+    }
+    cout <span style=color:#f92672>&lt;&lt;</span> endl;
+
+}
+
+</code></pre></div><p><a href=https://atcoder.jp/contests/abc289/submissions/38790304>実際の提出(ABC289-B)</a></p>
 <h2 id=c問題---coverage>C問題 - Coverage</h2>
 <p><a href=https://atcoder.jp/contests/abc289/tasks/abc289_c>問題文</a></p>
 <p>Mが小さいので、実は状態数はとても少ない。なので全探索をする。<br>
 こんな感じの状態数が少なく、またそれぞれの要素を選ぶか、選ばないかを決めていく問題で典型的な戦略はBit全探索である。</p>
 <p>Bit全探索をして、それぞれの集合が1~Nをそれぞれ1以上含んでいるかを判定できれば良い</p>
-<p>自分の提出<a href=https://atcoder.jp/contests/abc289/submissions/38794841>ABC289-C</a></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N , M ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N <span style=color:#f92672>&gt;&gt;</span> M ; 
+    vector<span style=color:#f92672>&lt;</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> S(M , vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>()) ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> M ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>int</span> c ;
+        cin <span style=color:#f92672>&gt;&gt;</span> c ; 
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> c ; j<span style=color:#f92672>++</span>){
+            <span style=color:#66d9ef>int</span> a ;
+            cin <span style=color:#f92672>&gt;&gt;</span> a ;
+            a<span style=color:#f92672>--</span> ; 
+            S.at(i).push_back(a) ; 
+        }
+    }
+
+    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> ans <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;&lt;</span>M ; i<span style=color:#f92672>++</span>){
+        vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>bool</span><span style=color:#f92672>&gt;</span> used(N,false) ; 
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> M ; j<span style=color:#f92672>++</span>){
+            <span style=color:#66d9ef>if</span>(i<span style=color:#f92672>&amp;</span>(<span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;&lt;</span>j)){
+                <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> k <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; k <span style=color:#f92672>&lt;</span> S.at(j).size() ; k<span style=color:#f92672>++</span>){
+                    used.at(S.at(j).at(k)) <span style=color:#f92672>=</span> true ; 
+                }
+            }
+        }
+
+        <span style=color:#66d9ef>bool</span> ok<span style=color:#f92672>=</span> true ; 
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> N ; j<span style=color:#f92672>++</span>){
+            <span style=color:#66d9ef>if</span>(used.at(j) <span style=color:#f92672>==</span> false) ok <span style=color:#f92672>=</span> false ; 
+        }
+        <span style=color:#66d9ef>if</span>(ok) ans<span style=color:#f92672>++</span> ; 
+    }
+    cout <span style=color:#f92672>&lt;&lt;</span> ans <span style=color:#f92672>&lt;&lt;</span> endl;
+}
+</code></pre></div><p><a href=https://atcoder.jp/contests/abc289/submissions/38794841>実際の提出(ABC289-C)</a></p>
 <h2 id=d問題---step-up-robot>D問題 - Step Up Robot</h2>
 <p><a href=https://atcoder.jp/contests/abc289/tasks/abc289_d>問題文</a></p>
 <p>なんか同じ様な問題をどこかで見た気がする。その時は、階段のどこかの段が壊れているけど、最上段まで登れますか？みたいな感じだった。<br>
 みるからにDPだったのでDPをやった。毎回その段にモチがあるかを早く判定できればよい。<br>
 モチ配列の中にその段があるかを毎回判定すると間に合わないので、予めその段にモチがあるかないかのbool配列を持っておいて計算量を落とした。</p>
 <p>小さい方の段から、今いる段に存在することができ、かつ次の動作で移動できる段にモチがなければTrue、としてDP遷移をしていけばよい。</p>
-<p>自分の提出<a href=https://atcoder.jp/contests/abc289/submissions/38798443>ABC289-D</a></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N ; 
+    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> A(N) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>) cin <span style=color:#f92672>&gt;&gt;</span> A.at(i)  ; 
+    <span style=color:#66d9ef>int</span> M ;
+    cin <span style=color:#f92672>&gt;&gt;</span> M ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> B(<span style=color:#ae81ff>200010</span>) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> M ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>int</span> b ; 
+        cin <span style=color:#f92672>&gt;&gt;</span> b ; 
+        B.at(b)<span style=color:#f92672>++</span> ; 
+    }
+    <span style=color:#66d9ef>int</span> X;
+    cin <span style=color:#f92672>&gt;&gt;</span> X ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>bool</span><span style=color:#f92672>&gt;</span> used(<span style=color:#ae81ff>200010</span>, false) ;
+    used.at(<span style=color:#ae81ff>0</span>) <span style=color:#f92672>=</span> true ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>100000</span>; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>if</span>(used.at(i) <span style=color:#f92672>==</span> false) <span style=color:#66d9ef>continue</span> ; 
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> N ; j<span style=color:#f92672>++</span>){
+            <span style=color:#66d9ef>int</span> nx <span style=color:#f92672>=</span> i <span style=color:#f92672>+</span> A.at(j) ; 
+            <span style=color:#66d9ef>if</span>(B.at(nx) <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>) <span style=color:#66d9ef>continue</span> ; 
+            used.at(nx) <span style=color:#f92672>=</span> true ; 
+        }
+    } 
+
+    <span style=color:#66d9ef>if</span>(used.at(X)) cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Yes&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+    <span style=color:#66d9ef>else</span> cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+}
+
+</code></pre></div><p><a href=https://atcoder.jp/contests/abc289/submissions/38798443>実際の提出(ABC289-D)</a></p>
 </div>
 <footer class=article-footer>
 <aside class=share>
@@ -107,6 +262,9 @@ B問題めんどくさいなと思ったのでUnion Findで殴りました。解
 <ul class=terms>
 <li><a href=https://ryongyong.github.io/tags/atcoder/>AtCoder</a></li>
 <li><a href=https://ryongyong.github.io/tags/c++/>C++</a></li>
+<li><a href=https://ryongyong.github.io/tags/bit%E5%85%A8%E6%8E%A2%E7%B4%A2/>bit全探索</a></li>
+<li><a href=https://ryongyong.github.io/tags/union-find/>Union Find</a></li>
+<li><a href=https://ryongyong.github.io/tags/dp/>DP</a></li>
 </ul>
 </section>
 </footer>
