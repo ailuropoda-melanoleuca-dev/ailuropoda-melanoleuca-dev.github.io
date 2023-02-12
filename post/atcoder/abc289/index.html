@@ -206,7 +206,7 @@ B問題めんどくさいなと思ったのでUnion Findで殴りました。解
 <p><a href=https://atcoder.jp/contests/abc289/tasks/abc289_d>問題文</a></p>
 <p>なんか同じ様な問題をどこかで見た気がする。その時は、階段のどこかの段が壊れているけど、最上段まで登れますか？みたいな感じだった。<br>
 みるからにDPだったのでDPをやった。毎回その段にモチがあるかを早く判定できればよい。<br>
-モチ配列の中にその段があるかを毎回判定すると間に合わないので、予めその段にモチがあるかないかのbool配列を持っておいて計算量を落とした。</p>
+モチ配列の中にその段があるかを毎回判定すると間に合わないので、予めその段にモチがあるかないかの配列を持っておいて計算量を落とした。</p>
 <p>小さい方の段から、今いる段に存在することができ、かつ次の動作で移動できる段にモチがなければTrue、としてDP遷移をしていけばよい。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
 </span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
