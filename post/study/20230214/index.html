@@ -1,7 +1,7 @@
 <!doctype html><html>
 <head>
 <meta charset=utf-8>
-<title>Dialy - パンダ好き</title>
+<title>アルゴ式でSQLを久しぶりに書いた - パンダ好き</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -9,8 +9,23 @@
 <meta name=theme-color content="#263238">
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
-<link rel=alternate type=application/rss+xml href=https://ryongyong.github.io/categories/dialy/index.xml title=パンダ好き>
-<link rel=canonical href=https://ryongyong.github.io/categories/dialy/>
+<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/20230214/ title=パンダ好き>
+<meta name=description content="業務でデータ分析をする際にpysparkやる機会が出てきたので、SQL思い出しがてらアルゴ式のデータベース入門を一応全部埋めておいた。 自分の">
+<meta property="og:title" content="アルゴ式でSQLを久しぶりに書いた - パンダ好き">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ryongyong.github.io/post/study/20230214/">
+<meta property="og:image" content="https://ryongyong.github.io/images/default.png">
+<meta property="og:site_name" content="パンダ好き">
+<meta property="og:description" content="業務でデータ分析をする際にpysparkやる機会が出てきたので、SQL思い出しがてらアルゴ式のデータベース入門を一応全部埋めておいた。 自分の">
+<meta property="og:locale" content="ja_JP">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="パンダ好き">
+<meta name=twitter:url content="https://ryongyong.github.io/post/study/20230214/">
+<meta name=twitter:title content="アルゴ式でSQLを久しぶりに書いた - パンダ好き">
+<meta name=twitter:description content="業務でデータ分析をする際にpysparkやる機会が出てきたので、SQL思い出しがてらアルゴ式のデータベース入門を一応全部埋めておいた。 自分の">
+<meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"アルゴ式でSQLを久しぶりに書いた-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-14T00:05:34JST","dateModified":"2023-02-14T00:05:34JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"業務でデータ分析をする際にpysparkやる機会が出てきたので、SQL思い出しがてらアルゴ式のデータベース入門を一応全部埋めておいた。 自分の"}</script>
+<link rel=canonical href=https://ryongyong.github.io/post/study/20230214/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -29,28 +44,76 @@
 <div class=l-container>
 <div class=mrow>
 <div class="mcol c8">
-<header class=page-title>
-<h1 class=title>Dialy</h1>
-</header>
-<div class=articles>
-<div class=mrow>
-<div class="mcol c6">
-<article class=li>
-<a href=https://ryongyong.github.io/post/dialy/first-post/>
-<div class="thumb thumb-d5137b3c75f81140b6b5d8a271670573"></div>
-<div class=inner>
-<h2 class=title>First Post</h2>
+<article class=sn>
+<div class="thumb thumb-f2f33f29a091870220f891133956bfb3"></div>
+<header class=article-header>
+<h1 class=title>アルゴ式でSQLを久しぶりに書いた</h1>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-10T01:57:14JST>Feb 10, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-14T00:05:34JST>Feb 14, 2023</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
+</ul>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&title=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&text=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&t=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&title=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+</header>
+<div class=article-body><p>　業務でデータ分析をする際にpysparkやる機会が出てきたので、SQL思い出しがてらアルゴ式の<a href=https://algo-method.com/courses/33>データベース入門</a>を一応全部埋めておいた。<br>
+　自分の環境にテーブル構築したりする必要がないので、クエリ書くまでの敷居がとても低いのがとてもよいね。与えられた問題を解き終わったら、実行環境だけ拝借して遊ぶこともできる(少しテーブルが小さいのでTitanicとか使った方が遊ぶのにはいいかも)。</p>
+</div>
+<footer class=article-footer>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&title=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&text=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&t=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f&title=%e3%82%a2%e3%83%ab%e3%82%b4%e5%bc%8f%e3%81%a7SQL%e3%82%92%e4%b9%85%e3%81%97%e3%81%b6%e3%82%8a%e3%81%ab%e6%9b%b8%e3%81%84%e3%81%9f" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2f20230214%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/categories/study/>study</a></li>
+</ul>
+</section>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/tags/>TAGS</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/tags/sql/>SQL</a></li>
+<li><a href=https://ryongyong.github.io/tags/algo-method/>Algo-method</a></li>
+</ul>
+</section>
+</footer>
+</article>
+<div class="adj mrow">
+<div class="mcol c6">
+<header>Next Article</header>
+</div>
+<div class="mcol c6">
+<header>Previous Article</header>
+<article class=lism>
+<a href=https://ryongyong.github.io/post/atcoder/abc289/>
+<div class="thumb thumb-27b04af78b97da82a96b17a9e4611329"></div>
+<div class=inner>
+<div class=title>ABC289(Ｓｋｙ株式会社プログラミングコンテスト2023)参加記</div>
+<ul class="facts sm">
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=12007-02-12T03:48:05JST>Feb 12, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
-<div class=summary>test 数式がtexみたいに打てないの、だいぶ不満だなあ。 気が向いた時にどうにかする予定。</div>
 </div>
 </a>
 </article>
 </div>
 </div>
-</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//XYW.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
 </div>
 <div class="mcol c4">
 <aside class=l-sidebar>
