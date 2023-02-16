@@ -4,7 +4,7 @@ thumbnail = ""
 tags = ["C++", "AtCoder"]
 categories = ["AtCoder"]
 date = "2023-02-17T03:16:18+09:00"
-title = "Abc237(途中までバーチャル参加)"
+title = "ABC237(途中までバーチャル参加)"
 description = ""
 +++
 
