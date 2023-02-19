@@ -1,8 +1,8 @@
 +++
 draft = false
 thumbnail = ""
-tags = []
-categories = []
+tags = ["AtCoder", "C++"]
+categories = ["AtCoder"]
 date = "2023-02-15T01:44:12+09:00"
 title = "ABC134-D"
 description = ""
