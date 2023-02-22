@@ -1,0 +1,292 @@
+<!doctype html><html ⚡>
+<head>
+<meta charset=utf-8>
+<script async src=https://cdn.ampproject.org/v0.js></script>
+<title>ABC247-ABCD - パンダ好き</title>
+<meta name=pinterest content="nopin">
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
+<link rel="dns-prefetch preconnect" href=https://use.fontawesome.com crossorigin>
+<meta name=theme-color content="#263238">
+<meta name=generator content="Hugo 0.91.2">
+<link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
+<link rel=canonical type=text/html href=https://ryongyong.github.io/post/atcoder/abc247-vertual/ title=パンダ好き>
+<meta name=description content="A - Move Right 問題文 横一列に$4$つのマスが並んでいます。 各文字が$0$または$1$である長さ$4$の文字列$S$が与えられます。 $S$の$i$文">
+<meta property="og:title" content="ABC247-ABCD - パンダ好き">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ryongyong.github.io/amp/post/atcoder/abc247-vertual/">
+<meta property="og:image" content="https://ryongyong.github.io/images/default.png">
+<meta property="og:site_name" content="パンダ好き">
+<meta property="og:description" content="A - Move Right 問題文 横一列に$4$つのマスが並んでいます。 各文字が$0$または$1$である長さ$4$の文字列$S$が与えられます。 $S$の$i$文">
+<meta property="og:locale" content="ja_JP">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="パンダ好き">
+<meta name=twitter:url content="https://ryongyong.github.io/amp/post/atcoder/abc247-vertual/">
+<meta name=twitter:title content="ABC247-ABCD - パンダ好き">
+<meta name=twitter:description content="A - Move Right 問題文 横一列に$4$つのマスが並んでいます。 各文字が$0$または$1$である長さ$4$の文字列$S$が与えられます。 $S$の$i$文">
+<meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"ABC247-ABCD-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-23T01:00:38JST","dateModified":"2023-02-23T01:00:38JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"A - Move Right 問題文 横一列に$4$つのマスが並んでいます。 各文字が$0$または$1$である長さ$4$の文字列$S$が与えられます。 $S$の$i$文"}</script>
+<link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom>html{font-size:18px;background-color:rgba(236,239,241,.5)}@media(max-width:768px){html{font-size:15px}}body{color:#333;font-family:roboto slab,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,メイリオ,Meiryo,sans-serif;font-feature-settings:"palt";font-size:inherit;line-height:1rem;margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:1rem;font-weight:700;line-height:1rem;margin:0}hr{border:0;border-top:1px dashed #cfd8dc;margin:1rem 0}p{margin:0;line-height:1rem}a{color:#2196f3;text-decoration:none;transition-duration:.3s}ul,ol{margin:0;padding:0}table{border-collapse:collapse;display:block;overflow-x:auto}th,td{font-size:.8rem;padding:.5rem}tr{border-bottom:1px dashed #ddd}main,aside{display:block}main{padding:1rem 0 3rem}.l-container{position:relative;max-width:68rem;margin:0 auto;padding:0 1rem}.l-container.thin{max-width:44rem}.l-header{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);padding:1rem 0;text-align:center}.l-header .description{margin-top:.5rem;font-size:.8rem}.l-footer{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);font-size:.6rem;font-weight:700;padding:1rem 0}.l-sidebar{margin:-1rem 0}@media(max-width:768px){.l-sidebar{margin-top:4rem}}.mrow{margin:0 -1rem;overflow:hidden}.mcol{box-sizing:border-box;float:left;padding:0 1rem}.c6{width:50%}.c4{width:33.26323833%}.c8{width:66.66666%}@media(max-width:768px){.mcol{width:100%;float:none}}.logo a{font-size:1.4rem;line-height:1.5rem;font-weight:700;color:#333}.articles{margin:-1rem 0;margin-bottom:1rem}.articles.sm{margin:-.5rem 0;margin-bottom:0}article{border-radius:4px;overflow:hidden}article.li{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);height:20rem;overflow:hidden;margin:1rem 0}article.li>a{display:block;color:#333}article.li .inner{padding:1rem}article.li .thumb{height:8rem}article.li .title{color:#333;font-size:1.2rem;line-height:1.5rem;margin-bottom:.5rem}article.li .summary{font-size:.8rem;height:6rem;overflow:hidden;margin-top:1rem}article.li .summary::after{content:'...'}article.lism{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);margin:.5rem 0}article.lism::after{content:'';display:block;clear:both}article.lism>a{display:block;color:#333}article.lism .inner{display:table-cell;vertical-align:middle;height:5rem;padding:0 .75rem}article.lism .thumb{width:5rem;height:5rem;float:left}article.lism .title{font-weight:700;font-size:.8rem;margin-bottom:.25rem}article.sn{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);margin-bottom:1rem}article.sn .thumb{height:20rem}@media(max-width:768px){article.sn .thumb{height:10rem}}article.sn>.article-header,article.sn>.article-body,article.sn .article-footer{padding:2rem}article.sn>.article-body{padding:0 2rem}@media(max-width:768px){article.sn>.article-header,article.sn>.article-body,article.sn .article-footer{padding:1rem}article.sn>.article-body{padding:0 1rem}}article.sn>.article-header .title{font-size:1.8rem;line-height:2rem;margin-bottom:.5rem}@media(max-width:768px){article.sn>.article-header .title{font-size:1.4rem;line-height:1.5rem}}article.sn>.article-header .facts{margin-bottom:1rem}article.sn>.article-body{margin-bottom:1.5rem}article.sn>.article-body h2{border-bottom:.25rem solid #333;font-size:1.2rem;line-height:1.5rem;margin:1.5rem 0;padding:.5rem 0}article.sn>.article-body h3{border-left:.5rem solid #333;line-height:1.5rem;margin:1.5rem 0;padding:.125rem .5rem}article.sn>.article-body ul,article.sn>.article-body ol{margin:1.5rem 0;padding-left:1.5rem}article.sn>.article-body li{padding-bottom:.5rem;line-height:1.5rem}article.sn>.article-body li:last-child{padding-bottom:0}article.sn>.article-body p{margin:1rem 0;line-height:1.5rem}article.sn>.article-body strong,article.sn>.article-body em{font-style:normal;font-weight:700}article.sn>.article-body strong{box-shadow:0 -.5rem #ffc107 inset}article.sn>.article-body em{color:#8bc34a}article.sn>.article-body h2 code{font-size:1.1rem}article.sn>.article-body h1 code,article.sn>.article-body h3 code,article.sn>.article-body h4 code,article.sn>.article-body h5 code,article.sn>.article-body h6 code{font-size:.9rem}article.sn>.article-body code,article.sn>.article-body pre{font-family:Menlo,Consolas,monospace;font-size:.7rem}article.sn>.article-body pre{background-color:#333;color:#fff;line-height:1rem;margin:1.5rem -2rem;overflow:auto}@media(max-width:768px){article.sn>.article-body pre{margin:1.5rem -1rem}}article.sn>.article-body pre>code{display:block;padding:1rem 2rem}@media(max-width:768px){article.sn>.article-body pre>code{padding:1rem}}article.sn>.article-body p code,article.sn>.article-body h1 code,article.sn>.article-body h2 code,article.sn>.article-body h3 code,article.sn>.article-body h4 code,article.sn>.article-body h5 code,article.sn>.article-body h6 code,article.sn>.article-body li code{background-color:#eceff1;color:#333;border-radius:4px;margin:0 .25rem;padding:.375rem;white-space:nowrap}article.sn>.article-body blockquote{position:relative;border-left:.25rem solid #333;font-size:.8rem;padding:.125rem 1rem;margin:1.5rem 0}@media(max-width:768px){article.sn>.article-body blockquote{font-size:1rem}}article.sn>.article-body blockquote p{margin:.5rem 0;line-height:1rem}article.sn>.article-body figure{margin:1.5rem 0}article.sn>.article-body img,article.sn>.article-body figure img,article.sn>.article-body figure amp-img{box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);max-width:100%;height:100%}article.sn>.article-body figcaption{color:#cfd8dc;font-size:.8rem;font-weight:700;margin-top:.5rem}.facts li{display:inline;font-size:.8rem;margin-right:1rem}.facts i{color:#cfd8dc;margin-right:.5em}.facts.sm li{font-size:.7rem}section.sidebar{margin:2rem 0}section.sidebar>header{font-size:.8rem;font-weight:700;letter-spacing:4px;text-align:center;margin:1.5rem 0}section.footer{margin:1rem 0}section.footer>header{font-size:.8rem;margin:.5rem 0}section.footer>header::before{content:"- "}section.footer>header a{font-weight:700;color:#333;text-decoration:underline}.terms{margin:-.25rem}.terms li{display:inline-block}.terms a{display:block;float:left;background-color:#333;border-radius:4px;color:#fff;font-size:.7rem;margin:.25rem;padding:0 .75rem;line-height:1.75rem}.paging{text-align:center;padding:1rem 0}.paging a{display:inline-block;background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);border-radius:4px;color:#333;padding:0 1rem;line-height:3rem}.page-title{text-align:center;margin:1rem 0}.page-title::after{content:'';display:block;border-bottom:.25rem solid #333;width:3rem;margin:1.5rem auto}.page-title>.title{font-size:1.2rem;line-height:1.5rem}.share{padding:0}.share a{display:inline-block;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);min-width:1rem;height:2rem;border-radius:4px;color:#333;font-size:.8rem;font-weight:700;line-height:2rem;text-align:center;padding:0 .5rem}.adj article.lism{margin-bottom:1rem}.adj header{font-weight:700;font-size:.8rem}.toc{padding:0 2rem;margin:1rem 0}.toc nav>ul{background-color:#eceff1;border-radius:4px;display:inline-block;font-size:.8rem;padding:.5rem 1rem;word-break:break-all;list-style:none}.toc ul{padding:0}.toc ul ul{padding-left:1rem}.toc ul ul>li{font-weight:700;margin:.5rem 0;list-style-type:decimal}.toc ul ul ul{padding-left:1rem}.toc ul ul ul>li{list-style-type:disc;font-weight:500}.toc li{color:#90a4ae}@media(max-width:768px){.toc{padding:0 1rem}}.thumb{background-image:url(https://ryongyong.github.io/images/default.jpg);background-size:cover;background-position:50%}body{font-family:Lato,YuGothic,hiragino kaku gothic pro,Meiryo,sans-serif}.h-logo{font-family:Lobster,cursive}.l-container{max-width:40rem;margin:0 auto}</style>
+</head>
+<body>
+<header class=l-header>
+<h1 class=logo>
+<a href=https://ryongyong.github.io/>パンダ好き</a>
+</h1>
+</header>
+<main>
+<div class=l-container>
+<article class=sn>
+<div class="thumb thumb-c915851327e8a6146102d6cdf1709718"></div>
+<header class=article-header>
+<h1 class=title>ABC247-ABCD</h1>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-23T01:00:38JST>Feb 23, 2023</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
+</ul>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&title=ABC247-ABCD" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&text=ABC247-ABCD&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&t=ABC247-ABCD" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&title=ABC247-ABCD" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+</header>
+<div class=article-body><h2 id=a---move-right>A - Move Right</h2>
+<h3 id=問題文>問題文</h3>
+<p>横一列に$4$つのマスが並んでいます。</p>
+<p>各文字が$0$または$1$である長さ$4$の文字列$S$が与えられます。<br>
+$S$の$i$文字目が$1$であるとき、左から$i$番目のマスには$1$人の人がおり、$S$の$i$文字目が$0$であるとき、左から$i$番目のマスには人がいません。</p>
+<p>全ての人が一斉に、$1$つ右隣のマスへ移動します。この移動により、もともと右端のマスにいた人は消えます。</p>
+<p>移動後の各マスに人がいるかどうかを、$S$と同様のルールで文字列として出力してください。</p>
+<h3 id=制約>制約</h3>
+<p>$S$は $0, 1$のみからなる長さ$4$の文字列</p>
+<h3 id=解法>解法</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    string S ;
+    cin <span style=color:#f92672>&gt;&gt;</span> S ; 
+    S.pop_back() ; 
+    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;&lt;</span> S <span style=color:#f92672>&lt;&lt;</span> endl;
+}
+</code></pre></div><h2 id=b---unique-nicknames>B - Unique Nicknames</h2>
+<h3 id=問題文-1>問題文</h3>
+<p>人$1$, 人$2$, … 人$N$の$N$人の人がいます。人$i$の姓は$s_i$、名は$t_i$です。</p>
+<p>$N$人の人すべてにあだ名をつけることを考えます。人$i$のあだ名$a_i$は以下の条件を満たす必要があります。</p>
+<ul>
+<li>$a_i$は人$i$の姓あるいは名と一致する。言い換えると、$a_i = s_i$または$a_i = t_i$の少なくとも一方が成り立つ。</li>
+<li>$a_i$は自分以外の人の姓および名のどちらとも一致しない。言い換えると、$1≤j≤N,i \neq j$を満たすすべての整数$j$について$a_i \neq s_j$ かつ$a_i \neq t_j$が成り立つ。</li>
+</ul>
+<p>$N$人全員に条件を満たすあだ名をつけることは可能でしょうか。可能ならば Yes を、そうでないならば No を出力してください。</p>
+<h3 id=制約-1>制約</h3>
+<ul>
+<li>$2≤N≤100$</li>
+<li>$N$は整数である。</li>
+<li>$s_i,t_i$は英小文字からなる$1$文字以上$10$文字以下の文字列である。</li>
+</ul>
+<h3 id=解法-1>解法</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
+    vector<span style=color:#f92672>&lt;</span>string<span style=color:#f92672>&gt;</span> s(N) , t(N) ; 
+
+    map<span style=color:#f92672>&lt;</span>string , <span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> mp ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>) cin <span style=color:#f92672>&gt;&gt;</span> s.at(i) <span style=color:#f92672>&gt;&gt;</span> t.at(i) ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        mp[s.at(i)]<span style=color:#f92672>++</span> ; 
+        mp[t.at(i)]<span style=color:#f92672>++</span> ; 
+    }
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        string S <span style=color:#f92672>=</span> s.at(i) ;
+        string T <span style=color:#f92672>=</span> t.at(i) ; 
+
+        <span style=color:#66d9ef>if</span>(S <span style=color:#f92672>!=</span> T <span style=color:#f92672>&amp;&amp;</span> mp[S] <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>&amp;&amp;</span> mp[T] <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>2</span>){
+            cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ; 
+        }
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(S <span style=color:#f92672>==</span> T <span style=color:#f92672>&amp;&amp;</span> (mp[S] <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>3</span>) ){
+            cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ; 
+        }
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Yes&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+
+}
+</code></pre></div><h2 id=c---1-2-1-3-1-2-1>C - 1 2 1 3 1 2 1</h2>
+<h3 id=問題文-2>問題文</h3>
+<p>列$S_n$を次のように定義します。</p>
+<ul>
+<li>$S_1$は$1$つの$1$からなる長さ$1$の列である。</li>
+<li>$S_n$($n$は$2$以上の整数)は$S_{n−1},n,S_{n−1}$をこの順につなげた列である。</li>
+</ul>
+<p>たとえば$S_2,S_3$は次のような列です。</p>
+<ul>
+<li>$S_2$は$S_1,2,S_1$をこの順につなげた列なので$1,2,1$である。</li>
+<li>$S_3$は$S_2,3,S_2$をこの順につなげた列なので$1,2,1,3,1,2,1$である。</li>
+</ul>
+<p>$N$が与えられるので、列$S_N$をすべて出力してください。</p>
+<h3 id=制約-2>制約</h3>
+<ul>
+<li>$N$は整数</li>
+<li>$1≤N≤16$</li>
+</ul>
+<h3 id=解法-2>解法</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
+
+    vector<span style=color:#f92672>&lt;</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span> <span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> s(N<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span> , vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> ()) ; 
+    s.at(<span style=color:#ae81ff>1</span>).push_back(<span style=color:#ae81ff>1</span>) ;  
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>; i <span style=color:#f92672>&lt;=</span> N ; i<span style=color:#f92672>++</span>){
+
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> s.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).size() ; j<span style=color:#f92672>++</span>){
+            s.at(i).push_back(s.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(j)) ; 
+        }
+
+        s.at(i).push_back(i) ; 
+
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> s.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).size() ; j<span style=color:#f92672>++</span>){
+            s.at(i).push_back(s.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(j)) ; 
+        }
+
+    }
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> s.at(N).size() ; i<span style=color:#f92672>++</span>){
+        cout <span style=color:#f92672>&lt;&lt;</span> s.at(N).at(i) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span> ; 
+    }
+    cout <span style=color:#f92672>&lt;&lt;</span> endl;
+}
+</code></pre></div><h2 id=d---cylinder>D - Cylinder</h2>
+<h3 id=問題文-3>問題文</h3>
+<p>空の筒があります。$Q$個のクエリが与えられるので順に処理してください。<br>
+クエリは次の$2$種類のいずれかです。</p>
+<ul>
+<li><strong>1 x c</strong> : 数$x$が書かれたボールを筒の右側から$c$個入れる</li>
+<li><strong>2 c</strong> : 筒の左側からボールを$c$個取り出し、取り出したボールに書かれている数の合計を出力する</li>
+</ul>
+<p>なお、筒の中でボールの順序が入れ替わることはないものとします。</p>
+<h3 id=制約-3>制約</h3>
+<ul>
+<li>$1≤Q≤2×10^5$</li>
+<li>$0≤x≤10^9$</li>
+<li>$1≤c≤10^9$</li>
+<li><strong>2 c</strong>のクエリが与えられるとき、筒の中には$c$個以上のボールがある</li>
+<li>入力に含まれる値は全て整数である</li>
+</ul>
+<h3 id=解法-3>解法</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> Q ;
+    cin <span style=color:#f92672>&gt;&gt;</span> Q ; 
+
+    deque<span style=color:#f92672>&lt;</span>pair<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> , <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> q ; 
+
+    <span style=color:#66d9ef>while</span>(Q<span style=color:#f92672>--</span>){
+        <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> t , x , c; 
+        cin <span style=color:#f92672>&gt;&gt;</span> t ;
+
+        <span style=color:#66d9ef>if</span>(t <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>){
+            cin <span style=color:#f92672>&gt;&gt;</span> x <span style=color:#f92672>&gt;&gt;</span> c ;
+            q.push_back(make_pair(x,c)) ; 
+        }
+        <span style=color:#66d9ef>else</span>{
+            cin <span style=color:#f92672>&gt;&gt;</span> c ; 
+            <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> now <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
+
+            <span style=color:#66d9ef>while</span>(c){
+                pair<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> , <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>&gt;</span> xc <span style=color:#f92672>=</span> q.front() ; 
+                q.pop_front() ; 
+
+                <span style=color:#66d9ef>if</span>(c <span style=color:#f92672>&gt;=</span> xc.second){
+                    c <span style=color:#f92672>-=</span> xc.second; 
+                    now <span style=color:#f92672>+=</span> xc.second<span style=color:#f92672>*</span>xc.first ; 
+                }
+                <span style=color:#66d9ef>else</span>{
+                    now <span style=color:#f92672>+=</span> xc.first<span style=color:#f92672>*</span>c ;
+                    q.push_front(make_pair(xc.first , xc.second <span style=color:#f92672>-</span> c)) ; 
+                    c <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
+                }
+            }
+            cout <span style=color:#f92672>&lt;&lt;</span> now <span style=color:#f92672>&lt;&lt;</span> endl;
+        }
+    }
+}
+</code></pre></div></div>
+<footer class=article-footer>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&title=ABC247-ABCD" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&text=ABC247-ABCD&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&t=ABC247-ABCD" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f&title=ABC247-ABCD" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc247-vertual%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/categories/atcoder/>AtCoder</a></li>
+</ul>
+</section>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/tags/>TAGS</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/tags/atcoder/>AtCoder</a></li>
+<li><a href=https://ryongyong.github.io/tags/c++/>C++</a></li>
+</ul>
+</section>
+</footer>
+</article>
+<div class="adj mrow">
+<div class="mcol c6">
+<header>Next Article</header>
+</div>
+<div class="mcol c6">
+<header>Previous Article</header>
+<article class=lism>
+<a href=https://ryongyong.github.io/amp/post/atcoder/abc223-vertual/>
+<div class="thumb thumb-cf3275af366629424ad46aa859c30946"></div>
+<div class=inner>
+<div class=title>ABC223-ABCD</div>
+<ul class="facts sm">
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=21007-02-21T00:57:39JST>Feb 21, 2023</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+</div>
+</a>
+</article>
+</div>
+</div>
+</div>
+</main>
+<footer class=l-footer>
+<div class=l-container>
+<p><span class=h-logo>&copy; パンダ好き</span></p>
+<aside>
+<p>Powered by <a href=https://gohugo.io/>Hugo</a>.</p>
+<p><a href=https://github.com/dim0627/hugo_theme_robust>Robust</a> designed by <a href=http://yet.unresolved.xyz/>Daisuke Tsuji</a>.</p>
+</aside>
+</div>
+</footer>
+</body>
+</html>
