@@ -92,7 +92,7 @@ print(downpcd)
 
 {{< img src="images/stanford_random_bunny.png" w="600" h="400" >}}
 
-ポイント数は7800点、実行時間0.5630021095275879[ms]
+ポイント数は7800点、実行時間0.5630[ms]
 
 
 ## Farthest Point Sampling
