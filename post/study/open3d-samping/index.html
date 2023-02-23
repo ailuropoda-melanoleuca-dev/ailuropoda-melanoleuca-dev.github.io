@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset=utf-8>
-<title>ABC237(途中までバーチャル参加) - パンダ好き</title>
+<title>Open3Dのサンプリング - パンダ好き</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -17,23 +17,23 @@
 <meta name=theme-color content="#263238">
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
-<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/atcoder/abc237-vertual/ title=パンダ好き>
-<meta name=description content="Result 50分でABCDの4完。 実際に参加するとパフォーマンスは大体1000程度。 Eはダイクストラ法でどうにかしたかったけど、コストが負の辺がある">
-<meta property="og:title" content="ABC237(途中までバーチャル参加) - パンダ好き">
+<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/open3d-samping/ title=パンダ好き>
+<meta name=description content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import">
+<meta property="og:title" content="Open3Dのサンプリング - パンダ好き">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ryongyong.github.io/post/atcoder/abc237-vertual/">
+<meta property="og:url" content="https://ryongyong.github.io/post/study/open3d-samping/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="Result 50分でABCDの4完。 実際に参加するとパフォーマンスは大体1000程度。 Eはダイクストラ法でどうにかしたかったけど、コストが負の辺がある">
+<meta property="og:description" content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
-<meta name=twitter:url content="https://ryongyong.github.io/post/atcoder/abc237-vertual/">
-<meta name=twitter:title content="ABC237(途中までバーチャル参加) - パンダ好き">
-<meta name=twitter:description content="Result 50分でABCDの4完。 実際に参加するとパフォーマンスは大体1000程度。 Eはダイクストラ法でどうにかしたかったけど、コストが負の辺がある">
+<meta name=twitter:url content="https://ryongyong.github.io/post/study/open3d-samping/">
+<meta name=twitter:title content="Open3Dのサンプリング - パンダ好き">
+<meta name=twitter:description content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"ABC237(途中までバーチャル参加)-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-17T03:16:18JST","dateModified":"2023-02-17T03:16:18JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"Result 50分でABCDの4完。 実際に参加するとパフォーマンスは大体1000程度。 Eはダイクストラ法でどうにかしたかったけど、コストが負の辺がある"}</script>
-<link rel=canonical href=https://ryongyong.github.io/post/atcoder/abc237-vertual/>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3Dのサンプリング-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-23T20:12:26JST","dateModified":"2023-02-23T20:12:26JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import"}</script>
+<link rel=canonical href=https://ryongyong.github.io/post/study/open3d-samping/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -53,185 +53,71 @@
 <div class=mrow>
 <div class="mcol c8">
 <article class=sn>
-<div class="thumb thumb-9d8de16ad11eff1fb66c1c781dac8ad5"></div>
+<div class="thumb thumb-8cd1e210016aded534da4120f81c9167"></div>
 <header class=article-header>
-<h1 class=title>ABC237(途中までバーチャル参加)</h1>
+<h1 class=title>Open3Dのサンプリング</h1>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-17T03:16:18JST>Feb 17, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-23T20:12:26JST>Feb 23, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
 </ul>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&title=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&text=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&t=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&title=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&title=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&text=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&t=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&title=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 </header>
-<div class=article-body><h2 id=result>Result</h2>
-<p>　50分でABCDの4完。
-実際に参加するとパフォーマンスは大体1000程度。<br>
-　Eはダイクストラ法でどうにかしたかったけど、コストが負の辺があるので、うーん、となったまま諦めた。解説を読むことにする。<br>
-　解説は今度書く(今はとても眠い)</p>
-<h2 id=a---not-overflow>A - Not Overflow</h2>
-<h3 id=問題文>問題文</h3>
-<p>整数$N$が与えられます。$N$が$−2^{31}$以上かつ$2^{31}$未満ならば Yes を、そうでないならば No を出力してください。</p>
-<h3 id=制約>制約</h3>
-<p>$−2^{63}≤N&lt;2^{63}$</p>
-<p>$N$は整数である。</p>
-<h3 id=提出>提出</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> N ;
-    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
-    <span style=color:#66d9ef>if</span>( N <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>2147483648</span> <span style=color:#f92672>&amp;&amp;</span> N <span style=color:#f92672>&gt;=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>2147483648</span>) cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Yes&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
-    <span style=color:#66d9ef>else</span> cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl; 
-}
-</code></pre></div><h2 id=b---matrix-transposition>B - Matrix Transposition</h2>
-<h3 id=問題文-1>問題文</h3>
-<p>$H$行$W$列の行列$A$が与えられます。
-$A$の上から
-$i$行目、左から
-$j$列目の要素は
-$A_{i,j}$です。<br>
-ここで、
-$W$行$H$列の行列$B$を、上から$i$行目、左から
-$j$列目の要素が$A_{j,i}$と一致するような行列として定めます。
-すなわち、$B$は$A$の転置行列です。$B$を出力してください。</p>
-<h3 id=制約-1>制約</h3>
-<p>$1≤H,W≤10^5$<br>
-$H×W≤10^5$<br>
-$1≤A_{i,j}≤10^9$<br>
-入力は全て整数である</p>
-<h3 id=提出-1>提出</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ; 
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-    <span style=color:#66d9ef>int</span> H , W ;
-    cin <span style=color:#f92672>&gt;&gt;</span> H <span style=color:#f92672>&gt;&gt;</span> W ; 
-    vector<span style=color:#f92672>&lt;</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> A(H , vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(W)) ; 
-
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> H ; i<span style=color:#f92672>++</span>){
-        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> W ; j<span style=color:#f92672>++</span>){
-            cin <span style=color:#f92672>&gt;&gt;</span> A.at(i).at(j) ; 
-        }
-    }
-
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> W ; i<span style=color:#f92672>++</span>){
-        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; j <span style=color:#f92672>&lt;</span> H ; j<span style=color:#f92672>++</span>){
-            cout <span style=color:#f92672>&lt;&lt;</span> A.at(j).at(i) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span> ; 
-        }
-        cout <span style=color:#f92672>&lt;&lt;</span> endl;
-    }
-}
-</code></pre></div><h2 id=c---kasaka>C - kasaka</h2>
-<h3 id=問題文-2>問題文</h3>
-<p>英小文字からなる文字列$S$が与えられます。<br>
-$S$の先頭に$a$をいくつか（$0$個でも良い）つけ加えて回文にすることができるか判定してください。
-ただし、長さ$N$の文字列
-$A=A_1A_2…A_N$が回文であるとは、すべての$1≤i≤N$について$A_i=A_{N+1−i}$が成り立っていることをいいます。</p>
-<h3 id=制約-2>制約</h3>
-<p>$1≤∣S∣≤10^6$<br>
-$S$は英小文字のみからなる。</p>
-<h3 id=提出-2>提出</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-    string S ;
-    cin <span style=color:#f92672>&gt;&gt;</span> S ; 
-    <span style=color:#66d9ef>int</span> N <span style=color:#f92672>=</span> S.size() ; 
-    <span style=color:#66d9ef>int</span> back_a <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ;  i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
-        <span style=color:#66d9ef>if</span>(S.at(N<span style=color:#f92672>-</span>i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;a&#39;</span>) back_a<span style=color:#f92672>++</span> ; 
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>break</span> ; 
-    }
-
-    <span style=color:#66d9ef>int</span> front_a <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
-        <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;a&#39;</span>) front_a<span style=color:#f92672>++</span> ; 
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>break</span> ; 
-    }
-
-    <span style=color:#66d9ef>if</span>(front_a <span style=color:#f92672>&gt;</span> back_a) cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
-    <span style=color:#66d9ef>else</span>{
-        reverse(S.begin() , S.end()) ; 
-        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> back_a <span style=color:#f92672>-</span> front_a ; i<span style=color:#f92672>++</span>){
-            S.push_back(<span style=color:#e6db74>&#39;a&#39;</span>) ; 
-        }
-        reverse(S.begin() , S.end() ) ; 
-        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> S.size() ; i<span style=color:#f92672>++</span>){
-            <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>!=</span> S.at(S.size() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>-</span> i )){
-                cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
-                <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ; 
-            }
-        }
-
-        cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Yes&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
-    }
-
-}
-</code></pre></div><h2 id=d---lr-insertion>D - LR insertion</h2>
-<h3 id=問題文-3>問題文</h3>
-<p>$1$個の$0$のみからなる数列$A=(0)$があります。<br>
-また、$L$と$R$のみからなる長さ$N$の文字列
-$S=s_1s_2…s_N$が与えられます。</p>
-<p>$i=1,2,…,N$の順番で、次の操作を行います。</p>
+<div class=article-body><p>Open3Dを使っていくつかのサンプリング手法を試してみた。</p>
 <ul>
-<li>$s_i$が$L$のとき、$A$内にある$i−1$のすぐ左に$i$を挿入する</li>
-<li>$s_i$が$R$のとき、$A$内にある$i−1$のすぐ右に$i$を挿入する</li>
+<li>Voxel Down Sampling</li>
+<li>Random Sampling</li>
+<li>Uniform Down Sampling</li>
+<li>Farthest Point Sampling</li>
+<li>Poisson Disk Sampling</li>
 </ul>
-<p>最終的な$A$を求めてください。</p>
-<h3 id=制約-3>制約</h3>
-<p>$1≤N≤5×10^5$<br>
-$N$は整数である
-$∣S∣=N$<br>
-$s_i$は$L$か$R$のいずれかである</p>
-<h3 id=提出-3>提出</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+<p>使った点群データは<a href=http://graphics.stanford.edu/data/3Dscanrep/>スタンフォードバニー</a>ちゃん</p>
+<p><img src=/img/stanford_bunny.png alt=フクロウa></p>
+<figure>
+<img src=https://ryongyong.github.io/images/tn.png alt width=600 height=400>
+</figure>
+<h2 id=voxel-down-sampling>Voxel Down Sampling</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys 
+<span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
 
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-    <span style=color:#66d9ef>int</span> N ;
-    cin <span style=color:#f92672>&gt;&gt;</span> N ;
-    string S ;
-    cin <span style=color:#f92672>&gt;&gt;</span> S ;
+<span style=color:#75715e># コマンドライン引数でplyとボクセルの１辺の長さを指定</span>
+filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>] 
+sampling_rate <span style=color:#f92672>=</span> float(sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>2</span>])
 
-    deque<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> q ; 
-    q.push_back(N) ; 
+pcd <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_point_cloud(filename)
 
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span> ; i <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> ; i<span style=color:#f92672>--</span>){
-        <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;L&#39;</span>){
-            q.push_back(i) ; 
-        }
-        <span style=color:#66d9ef>else</span>{
-            q.push_front(i) ; 
-        }
-    }
+<span style=color:#75715e># ボクセル化の実行</span>
+downpcd <span style=color:#f92672>=</span> pcd<span style=color:#f92672>.</span>voxel_down_sample(voxel_size <span style=color:#f92672>=</span> sampling_rate) 
 
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;=</span> N ; i<span style=color:#f92672>++</span>){
-        cout <span style=color:#f92672>&lt;&lt;</span> q.at(i) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span> ; 
-    }
-    cout <span style=color:#f92672>&lt;&lt;</span> endl;
-}
-</code></pre></div></div>
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([pcd])
+print(pcd)
+
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([downpcd])
+print(downpcd)
+</code></pre></div><h2 id=random-sampling>Random Sampling</h2>
+<h2 id=uniform-down-sampling>Uniform Down Sampling</h2>
+<h2 id=farthest-point-sampling>Farthest Point Sampling</h2>
+<h2 id=poisson-disk-sampling>Poisson Disk Sampling</h2>
+<p>Open3Dめちゃくちゃ便利、C++の方も今度使ってみようかな。</p>
+</div>
 <footer class=article-footer>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&title=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&text=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&t=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f&title=ABC237%28%e9%80%94%e4%b8%ad%e3%81%be%e3%81%a7%e3%83%90%e3%83%bc%e3%83%81%e3%83%a3%e3%83%ab%e5%8f%82%e5%8a%a0%29" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc237-vertual%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&title=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&text=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&t=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f&title=Open3D%e3%81%ae%e3%82%b5%e3%83%b3%e3%83%97%e3%83%aa%e3%83%b3%e3%82%b0" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-samping%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 <section class=footer>
 <header>
 <a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/categories/atcoder/>AtCoder</a></li>
 </ul>
 </section>
 <section class=footer>
@@ -239,8 +125,9 @@ $s_i$は$L$か$R$のいずれかである</p>
 <a href=https://ryongyong.github.io/tags/>TAGS</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/tags/c++/>C++</a></li>
-<li><a href=https://ryongyong.github.io/tags/atcoder/>AtCoder</a></li>
+<li><a href=https://ryongyong.github.io/tags/open3d/>Open3D</a></li>
+<li><a href=https://ryongyong.github.io/tags/python/>Python</a></li>
+<li><a href=https://ryongyong.github.io/tags/3d%E7%82%B9%E7%BE%A4%E5%87%A6%E7%90%86/>3D点群処理</a></li>
 </ul>
 </section>
 </footer>
@@ -248,28 +135,16 @@ $s_i$は$L$か$R$のいずれかである</p>
 <div class="adj mrow">
 <div class="mcol c6">
 <header>Next Article</header>
-<article class=lism>
-<a href=https://ryongyong.github.io/post/dialy/20230219/>
-<div class="thumb thumb-cb845f5e611126870c62395be518665b"></div>
-<div class=inner>
-<div class=title>2023年02月17, 18日</div>
-<ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=19007-02-19T23:33:23JST>Feb 19, 2023</time></li>
-<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
-</ul>
-</div>
-</a>
-</article>
 </div>
 <div class="mcol c6">
 <header>Previous Article</header>
 <article class=lism>
-<a href=https://ryongyong.github.io/post/atcoder/abc134-d/>
-<div class="thumb thumb-8d181aa014cd2e6c82d30ec2895ead37"></div>
+<a href=https://ryongyong.github.io/post/atcoder/abc247-vertual/>
+<div class="thumb thumb-c915851327e8a6146102d6cdf1709718"></div>
 <div class=inner>
-<div class=title>ABC134-D</div>
+<div class=title>ABC247-ABCD</div>
 <ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=15007-02-15T01:44:12JST>Feb 15, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=23007-02-23T01:00:38JST>Feb 23, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 </div>
