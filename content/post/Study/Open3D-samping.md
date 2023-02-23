@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 thumbnail = ""
 tags = ["Open3D", "Python", "3D点群処理"]
 categories = []
