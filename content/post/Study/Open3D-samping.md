@@ -19,7 +19,7 @@ Open3Dを使っていくつかのサンプリング手法を試してみた。
 使った点群データは[スタンフォードバニー](http://graphics.stanford.edu/data/3Dscanrep/)ちゃん
 
 
-![フクロウa](/img/stanford_bunny.png)
+![フクロウa](/stanford_bunny.png)
 
 
 {{< img src="images/tn.png" w="600" h="400" >}}
