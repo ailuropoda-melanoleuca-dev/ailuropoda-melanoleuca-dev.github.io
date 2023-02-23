@@ -1,5 +1,5 @@
 +++
-draft = false
+draft = true
 thumbnail = ""
 tags = ["Open3D", "Python", "3D点群処理"]
 categories = []
@@ -19,7 +19,7 @@ Open3Dを使っていくつかのサンプリング手法を試してみた。
 使った点群データは[スタンフォードバニー](http://graphics.stanford.edu/data/3Dscanrep/)ちゃん
 
 
-![フクロウa](stanford_bunny.png)
+![フクロウa](/img/stanford_bunny.png)
 
 
 {{< img src="images/tn.png" w="600" h="400" >}}
