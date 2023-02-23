@@ -18,21 +18,21 @@
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
 <link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/open3d-samping/ title=パンダ好き>
-<meta name=description content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import">
+<meta name=description content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling ボクセル">
 <meta property="og:title" content="Open3Dのサンプリング - パンダ好き">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryongyong.github.io/post/study/open3d-samping/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import">
+<meta property="og:description" content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling ボクセル">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
 <meta name=twitter:url content="https://ryongyong.github.io/post/study/open3d-samping/">
 <meta name=twitter:title content="Open3Dのサンプリング - パンダ好き">
-<meta name=twitter:description content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import">
+<meta name=twitter:description content="Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling ボクセル">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3Dのサンプリング-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-23T20:12:26JST","dateModified":"2023-02-23T20:12:26JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Uniform Down Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling import"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3Dのサンプリング-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-23T20:12:26JST","dateModified":"2023-02-23T20:12:26JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"Open3Dを使っていくつかのサンプリング手法を試してみた。 Voxel Down Sampling Random Sampling Farthest Point Sampling Poisson Disk Sampling 使った点群データはスタンフォードバニーちゃん Voxel Down Sampling ボクセル"}</script>
 <link rel=canonical href=https://ryongyong.github.io/post/study/open3d-samping/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
@@ -72,16 +72,18 @@
 <ul>
 <li>Voxel Down Sampling</li>
 <li>Random Sampling</li>
-<li>Uniform Down Sampling</li>
 <li>Farthest Point Sampling</li>
 <li>Poisson Disk Sampling</li>
 </ul>
 <p>使った点群データは<a href=http://graphics.stanford.edu/data/3Dscanrep/>スタンフォードバニー</a>ちゃん</p>
-<p><img src=/stanford_bunny.png alt=フクロウa></p>
 <figure>
-<img src=https://ryongyong.github.io/images/tn.png alt width=600 height=400>
+<img src=https://ryongyong.github.io/images/stanford_bunny.png alt width=600 height=400>
 </figure>
 <h2 id=voxel-down-sampling>Voxel Down Sampling</h2>
+<p>ボクセル化は一辺がある定数の立方体の中に、一点だけ点があるように点群の再構築するサンプリング手法。<br>
+Open3Dにはボクセル化用の組み込み関数があるので、それを使うだけ。</p>
+<p>内部で３次元のそれぞれの軸でmin,maxを計算した後、空間を切るので、点群が整列する。
+ボクセル化は最終的にいくつの点で再構成されるのかを指定できないのが微妙なところ。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys 
 <span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
 
@@ -99,11 +101,119 @@ print(pcd)
 
 o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([downpcd])
 print(downpcd)
-</code></pre></div><h2 id=random-sampling>Random Sampling</h2>
-<h2 id=uniform-down-sampling>Uniform Down Sampling</h2>
+</code></pre></div><figure>
+<img src=https://ryongyong.github.io/images/stanford_voxel_bunny.png alt width=600 height=400>
+</figure>
+<p>スタンフォードバニーを一辺の長さ0.003でボクセル化した。<br>
+ポイント数は7834点、実行時間は0.004[ms]</p>
+<h2 id=random-sampling>Random Sampling</h2>
+<p>ランダムサンプリング、これは比較のために自分で適当に実装した。<br>
+listの中に既に選ばれた点があるかどうかを確認するのに、サンプリング数を$N$として、$\mathcal{O}(N)$かかるので、全体計算量$\mathcal{O}(N^2)$になる。遅い。<br>
+もちろん不均一</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys
+<span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
+<span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>random_sampling</span>(pcd, sampling_count):
+    now_count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> 
+    points <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points)
+    indices <span style=color:#f92672>=</span> []
+    <span style=color:#66d9ef>while</span> now_count <span style=color:#f92672>!=</span> sampling_count:
+        idx <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>random<span style=color:#f92672>.</span>randint(len(points))
+        <span style=color:#66d9ef>if</span> idx <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> indices:
+            indices<span style=color:#f92672>.</span>append(idx)
+            now_count <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>
+        
+    down_pcd <span style=color:#f92672>=</span> pcd<span style=color:#f92672>.</span>select_by_index(indices)
+    <span style=color:#66d9ef>return</span> down_pcd
+
+
+filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>] 
+sampling_count <span style=color:#f92672>=</span> int(sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>2</span>])
+
+pcd <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_point_cloud(filename)
+
+downpcd <span style=color:#f92672>=</span> random_sampling(pcd , sampling_count)
+
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([pcd])
+print(pcd)
+
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([downpcd])
+print(downpcd)
+</code></pre></div><figure>
+<img src=https://ryongyong.github.io/images/stanford_random_bunny.png alt width=600 height=400>
+</figure>
+<p>ポイント数は7800点、実行時間0.5630021095275879[ms]</p>
 <h2 id=farthest-point-sampling>Farthest Point Sampling</h2>
+<p>ユークリッド距離を距離関数としてFPSを実装した。<br>
+計算量は全点群数を$M$、取得点群数を$N$として、$\mathcal{O}(NM)$ぐらい。ランダムサンプリングより遅い。<br>
+ランダムサンプリングと比べて点群が等間隔になっているのがわかると思う。<br>
+計算量、速度の改善はダイクストラやKd-treeを使えば改善される。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys
+<span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d 
+<span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np 
+ 
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>l2_norm</span>(a,b):
+    <span style=color:#66d9ef>return</span> ((a<span style=color:#f92672>-</span>b)<span style=color:#f92672>**</span><span style=color:#ae81ff>2</span>)<span style=color:#f92672>.</span>sum(axis <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>)
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fps</span>(pcd, k , metrics<span style=color:#f92672>=</span>l2_norm):
+    <span style=color:#75715e># 選ばれた点の集合</span>
+    indices <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>zeros(k,dtype<span style=color:#f92672>=</span>np<span style=color:#f92672>.</span>int32)
+
+    points <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points)
+
+    <span style=color:#75715e># 初期点を乱数で生成</span>
+    indices[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>random<span style=color:#f92672>.</span>randint(len(points))
+
+    distances <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>zeros(points<span style=color:#f92672>.</span>shape[<span style=color:#ae81ff>0</span>], dtype<span style=color:#f92672>=</span>np<span style=color:#f92672>.</span>float32)
+
+    farthest_point <span style=color:#f92672>=</span> points[indices[<span style=color:#ae81ff>0</span>]]
+    <span style=color:#75715e># 入力されたメトリクスに従って距離計算</span>
+    min_distances <span style=color:#f92672>=</span> metrics(farthest_point,points)
+    distances[:] <span style=color:#f92672>=</span> min_distances 
+
+    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(<span style=color:#ae81ff>1</span>,k):
+        indices[i] <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>argmax(min_distances)
+        farthest_point <span style=color:#f92672>=</span> points[indices[i]]
+        distances[:] <span style=color:#f92672>=</span> metrics(farthest_point,points)
+        min_distances <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>minimum(min_distances,distances[:])
+
+    pcd <span style=color:#f92672>=</span> pcd<span style=color:#f92672>.</span>select_by_index(indices)
+    <span style=color:#66d9ef>return</span> pcd 
+
+
+filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>]
+sample_count <span style=color:#f92672>=</span> int(sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>2</span>])
+pcd <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_point_cloud(filename)
+downpcd <span style=color:#f92672>=</span> fps(pcd ,sample_count)
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([downpcd])
+
+</code></pre></div><p><figure>
+<img src=https://ryongyong.github.io/images/stanford_fps_bunny.png alt width=600 height=400>
+</figure>
+ポイント数は7800点、実行時間は7.579[ms]</p>
 <h2 id=poisson-disk-sampling>Poisson Disk Sampling</h2>
-<p>Open3Dめちゃくちゃ便利、C++の方も今度使ってみようかな。</p>
+<p>FPSと比べて速い。当たり前だけどランダムサンプリングよりも一様に点を取得できている。<br>
+PDSの処理内容はランダムサンプリングとあまり変わらないが、サンプリングされた点同士がある一定距離以下である場合に棄却するので、空間的に一様に近づく。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys 
+<span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
+
+
+filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>]
+sample_count <span style=color:#f92672>=</span> int(sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>2</span>])
+
+mesh <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_triangle_mesh(filename)
+downpcd <span style=color:#f92672>=</span> mesh<span style=color:#f92672>.</span>sample_points_poisson_disk(number_of_points <span style=color:#f92672>=</span> sample_count)
+
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([mesh])
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([downpcd])
+</code></pre></div><p><figure>
+<img src=https://ryongyong.github.io/images/stanford_pds_bunny.png alt width=600 height=400>
+</figure>
+ポイント数は7800点、実行時間は2.397[ms]</p>
+<hr>
+<p>Open3Dめちゃくちゃ便利、ほとんどコーディングなしで遊べる。<br>
+C++の方も今度使ってみようかな。</p>
 </div>
 <footer class=article-footer>
 <aside class=share>
@@ -118,6 +228,7 @@ print(downpcd)
 <a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
 </header>
 <ul class=terms>
+<li><a href=https://ryongyong.github.io/categories/study/>Study</a></li>
 </ul>
 </section>
 <section class=footer>
@@ -301,7 +412,7 @@ print(downpcd)
 <ul class=terms>
 <li><a href=https://ryongyong.github.io/categories/atcoder>atcoder <span class=count>(6)</span></a></li>
 <li><a href=https://ryongyong.github.io/categories/dialy>dialy <span class=count>(3)</span></a></li>
-<li><a href=https://ryongyong.github.io/categories/study>study <span class=count>(1)</span></a></li>
+<li><a href=https://ryongyong.github.io/categories/study>study <span class=count>(2)</span></a></li>
 </ul>
 </section>
 <section class=sidebar>
