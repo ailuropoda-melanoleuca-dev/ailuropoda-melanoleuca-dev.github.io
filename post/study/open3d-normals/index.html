@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset=utf-8>
-<title>hugo - パンダ好き</title>
+<title>Open3Dを用いた法線推定 - パンダ好き</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -17,8 +17,23 @@
 <meta name=theme-color content="#263238">
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
-<link rel=alternate type=application/rss+xml href=https://ryongyong.github.io/tags/hugo/index.xml title=パンダ好き>
-<link rel=canonical href=https://ryongyong.github.io/tags/hugo/>
+<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/open3d-normals/ title=パンダ好き>
+<meta name=description content="今回もOpen3Dを使ったお遊び試行として、スタンフォードバニーの法線推定をしてみた。 法線は点群の位置合わせや、画像認識時の特徴量として重要">
+<meta property="og:title" content="Open3Dを用いた法線推定 - パンダ好き">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ryongyong.github.io/post/study/open3d-normals/">
+<meta property="og:image" content="https://ryongyong.github.io/images/default.png">
+<meta property="og:site_name" content="パンダ好き">
+<meta property="og:description" content="今回もOpen3Dを使ったお遊び試行として、スタンフォードバニーの法線推定をしてみた。 法線は点群の位置合わせや、画像認識時の特徴量として重要">
+<meta property="og:locale" content="ja_JP">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="パンダ好き">
+<meta name=twitter:url content="https://ryongyong.github.io/post/study/open3d-normals/">
+<meta name=twitter:title content="Open3Dを用いた法線推定 - パンダ好き">
+<meta name=twitter:description content="今回もOpen3Dを使ったお遊び試行として、スタンフォードバニーの法線推定をしてみた。 法線は点群の位置合わせや、画像認識時の特徴量として重要">
+<meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3Dを用いた法線推定-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-27T11:47:53JST","dateModified":"2023-02-27T11:47:53JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"今回もOpen3Dを使ったお遊び試行として、スタンフォードバニーの法線推定をしてみた。 法線は点群の位置合わせや、画像認識時の特徴量として重要"}</script>
+<link rel=canonical href=https://ryongyong.github.io/post/study/open3d-normals/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -37,28 +52,137 @@
 <div class=l-container>
 <div class=mrow>
 <div class="mcol c8">
-<header class=page-title>
-<h1 class=title>hugo</h1>
-</header>
-<div class=articles>
-<div class=mrow>
-<div class="mcol c6">
-<article class=li>
-<a href=https://ryongyong.github.io/post/dialy/20230214/>
-<div class="thumb thumb-b9918eaa329ca9fdfcc048a08f53c4b0"></div>
-<div class=inner>
-<h2 class=title>2023年02月14日</h2>
+<article class=sn>
+<div class="thumb thumb-84daa6d41eeb3101c7a3700ec2823001"></div>
+<header class=article-header>
+<h1 class=title>Open3Dを用いた法線推定</h1>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-14T02:23:39JST>Feb 14, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-27T11:47:53JST>Feb 27, 2023</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
+</ul>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&title=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&text=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&t=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&title=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+</header>
+<div class=article-body><p>　今回もOpen3Dを使ったお遊び試行として、スタンフォードバニーの法線推定をしてみた。</p>
+<p>　法線は点群の位置合わせや、画像認識時の特徴量として重要なので、Open3Dにはもちろん標準実装されている。</p>
+<h1 id=1-点群データの法線>1. 点群データの法線</h1>
+<p>　点に法線とはこれ如何に？という感があるが、一般に点群データを作成するときは、物体表面の点群が取得される(測光が物体の中に入り込まない)。</p>
+<p>　なので、得られる点群は面(物体表面)に位置する。これなら法線を新たに定義できそう。具体的には、ある点から一定距離以内にある点群を近傍点群とし、その３次元座標の主成分分析をおこなう。結果の固有値が最小となる固有ベクトルが法線となる。</p>
+<p>　結局は３次元座標での分散が一番小さいものが法線でしょ、的な感じ。</p>
+<h1 id=2-メッシュデータの法線>2. メッシュデータの法線</h1>
+<p>　メッシュデータの方では、メッシュを構成する辺を2本選び、そのベクトル積を求めれば、それはメッシュに対する法線である。</p>
+<h3 id=点群データ>点群データ</h3>
+<p>　もちろん点群データはうさぴょん。
+<figure>
+<img src=https://ryongyong.github.io/images/point_bunny.png alt width=600 height=400>
+</figure>
+</p>
+<p>　kD-Treeで近傍点群を求めたのち、それを表面だと思い、PCAから最小固有ベクトルを算出。法線の大きさが全て一定になっているのは、正規化しているため。</p>
+<p>　うさぴょんに針が刺さっているのがわかると思う。これが法線
+<figure>
+<img src=https://ryongyong.github.io/images/point_normal_bunny.png alt width=600 height=400>
+</figure>
+</p>
+<p>(えっ&mldr;コワー&mldr;)</p>
+<h3 id=法線データ>法線データ</h3>
+<p>入力のメッシュデータなうさぴょん。
+<figure>
+<img src=https://ryongyong.github.io/images/mesh_bunny.png alt width=600 height=400>
+</figure>
+</p>
+<p>法線情報をメッシュデータから計算し、メッシュデータに付与することで、法線に合わせたライティングが追加されたビューができる。</p>
+<figure>
+<img src=https://ryongyong.github.io/images/mesh_bunny_lighting.png alt width=600 height=400>
+</figure>
+<p>(これはこれで生々しくて気持ち悪い)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys
+<span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d 
+<span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np 
+
+filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>] 
+
+<span style=color:#75715e># メッシュデータとして読み込み</span>
+mesh_bunny <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_triangle_mesh(filename)
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([mesh_bunny])
+
+<span style=color:#75715e># メッシュデータの法線推定</span>
+mesh_bunny<span style=color:#f92672>.</span>compute_vertex_normals()
+
+<span style=color:#75715e># 法線情報が付与されているので、それに合わせたライティングがされる</span>
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([mesh_bunny])
+
+<span style=color:#75715e># ポイントクラウドデータ</span>
+pcd_bunny <span style=color:#f92672>=</span>  o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>PointCloud()
+pcd_bunny<span style=color:#f92672>.</span>points <span style=color:#f92672>=</span> mesh_bunny<span style=color:#f92672>.</span>vertices
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([pcd_bunny])
+
+<span style=color:#75715e># 近傍点群はkD-Treeを用いて探索</span>
+<span style=color:#75715e># radius:探索半径</span>
+<span style=color:#75715e># max_nn:探索個数 </span>
+pcd_bunny<span style=color:#f92672>.</span>estimate_normals(search_param <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeSearchParamHybrid(radius<span style=color:#f92672>=</span><span style=color:#ae81ff>10.0</span>,\
+                                                                               max_nn<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>))
+
+<span style=color:#75715e># 法線情報が追加されているので、描画フラグをtrueにする</span>
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([pcd_bunny], point_show_normal<span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>)
+
+</code></pre></div></div>
+<footer class=article-footer>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&title=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&text=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&t=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f&title=Open3D%e3%82%92%e7%94%a8%e3%81%84%e3%81%9f%e6%b3%95%e7%b7%9a%e6%8e%a8%e5%ae%9a" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-normals%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/categories/study/>Study</a></li>
+</ul>
+</section>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/tags/>TAGS</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/tags/open3d/>Open3D</a></li>
+<li><a href=https://ryongyong.github.io/tags/python/>Python</a></li>
+<li><a href=https://ryongyong.github.io/tags/3d%E7%82%B9%E7%BE%A4%E5%87%A6%E7%90%86/>3D点群処理</a></li>
+</ul>
+</section>
+</footer>
+</article>
+<div class="adj mrow">
+<div class="mcol c6">
+<header>Next Article</header>
+</div>
+<div class="mcol c6">
+<header>Previous Article</header>
+<article class=lism>
+<a href=https://ryongyong.github.io/post/study/open3d-samping/>
+<div class="thumb thumb-8cd1e210016aded534da4120f81c9167"></div>
+<div class=inner>
+<div class=title>Open3Dのサンプリング</div>
+<ul class="facts sm">
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=23007-02-23T20:12:26JST>Feb 23, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
-<div class=summary>記事にtex形式で数式を書けないとAtCoder解説記事や技術記事を書く際にお話にならないので、どうにか導入してみた。 参考記事はこれ &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">&lt;/script> &lt;script type="text/x-mathjax-config"></div>
 </div>
 </a>
 </article>
 </div>
 </div>
-</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//XYW.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
 </div>
 <div class="mcol c4">
 <aside class=l-sidebar>
