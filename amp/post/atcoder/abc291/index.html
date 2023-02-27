@@ -1,0 +1,416 @@
+<!doctype html><html ⚡>
+<head>
+<meta charset=utf-8>
+<script async src=https://cdn.ampproject.org/v0.js></script>
+<title>ABC291-ABCDE - パンダ好き</title>
+<meta name=pinterest content="nopin">
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
+<link rel="dns-prefetch preconnect" href=https://use.fontawesome.com crossorigin>
+<meta name=theme-color content="#263238">
+<meta name=generator content="Hugo 0.91.2">
+<link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
+<link rel=canonical type=text/html href=https://ryongyong.github.io/post/atcoder/abc291/ title=パンダ好き>
+<meta name=description content="AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS） A - camel Case 問題文 英大文字および英小文字からなる文字列$S$が与えられます。 ここで、$S$の">
+<meta property="og:title" content="ABC291-ABCDE - パンダ好き">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ryongyong.github.io/amp/post/atcoder/abc291/">
+<meta property="og:image" content="https://ryongyong.github.io/images/default.png">
+<meta property="og:site_name" content="パンダ好き">
+<meta property="og:description" content="AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS） A - camel Case 問題文 英大文字および英小文字からなる文字列$S$が与えられます。 ここで、$S$の">
+<meta property="og:locale" content="ja_JP">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:site content="パンダ好き">
+<meta name=twitter:url content="https://ryongyong.github.io/amp/post/atcoder/abc291/">
+<meta name=twitter:title content="ABC291-ABCDE - パンダ好き">
+<meta name=twitter:description content="AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS） A - camel Case 問題文 英大文字および英小文字からなる文字列$S$が与えられます。 ここで、$S$の">
+<meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"ABC291-ABCDE-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-27T23:18:19JST","dateModified":"2023-02-27T23:18:19JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS） A - camel Case 問題文 英大文字および英小文字からなる文字列$S$が与えられます。 ここで、$S$の"}</script>
+<link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom>html{font-size:18px;background-color:rgba(236,239,241,.5)}@media(max-width:768px){html{font-size:15px}}body{color:#333;font-family:roboto slab,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,メイリオ,Meiryo,sans-serif;font-feature-settings:"palt";font-size:inherit;line-height:1rem;margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:1rem;font-weight:700;line-height:1rem;margin:0}hr{border:0;border-top:1px dashed #cfd8dc;margin:1rem 0}p{margin:0;line-height:1rem}a{color:#2196f3;text-decoration:none;transition-duration:.3s}ul,ol{margin:0;padding:0}table{border-collapse:collapse;display:block;overflow-x:auto}th,td{font-size:.8rem;padding:.5rem}tr{border-bottom:1px dashed #ddd}main,aside{display:block}main{padding:1rem 0 3rem}.l-container{position:relative;max-width:68rem;margin:0 auto;padding:0 1rem}.l-container.thin{max-width:44rem}.l-header{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);padding:1rem 0;text-align:center}.l-header .description{margin-top:.5rem;font-size:.8rem}.l-footer{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);font-size:.6rem;font-weight:700;padding:1rem 0}.l-sidebar{margin:-1rem 0}@media(max-width:768px){.l-sidebar{margin-top:4rem}}.mrow{margin:0 -1rem;overflow:hidden}.mcol{box-sizing:border-box;float:left;padding:0 1rem}.c6{width:50%}.c4{width:33.26323833%}.c8{width:66.66666%}@media(max-width:768px){.mcol{width:100%;float:none}}.logo a{font-size:1.4rem;line-height:1.5rem;font-weight:700;color:#333}.articles{margin:-1rem 0;margin-bottom:1rem}.articles.sm{margin:-.5rem 0;margin-bottom:0}article{border-radius:4px;overflow:hidden}article.li{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);height:20rem;overflow:hidden;margin:1rem 0}article.li>a{display:block;color:#333}article.li .inner{padding:1rem}article.li .thumb{height:8rem}article.li .title{color:#333;font-size:1.2rem;line-height:1.5rem;margin-bottom:.5rem}article.li .summary{font-size:.8rem;height:6rem;overflow:hidden;margin-top:1rem}article.li .summary::after{content:'...'}article.lism{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);margin:.5rem 0}article.lism::after{content:'';display:block;clear:both}article.lism>a{display:block;color:#333}article.lism .inner{display:table-cell;vertical-align:middle;height:5rem;padding:0 .75rem}article.lism .thumb{width:5rem;height:5rem;float:left}article.lism .title{font-weight:700;font-size:.8rem;margin-bottom:.25rem}article.sn{background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);margin-bottom:1rem}article.sn .thumb{height:20rem}@media(max-width:768px){article.sn .thumb{height:10rem}}article.sn>.article-header,article.sn>.article-body,article.sn .article-footer{padding:2rem}article.sn>.article-body{padding:0 2rem}@media(max-width:768px){article.sn>.article-header,article.sn>.article-body,article.sn .article-footer{padding:1rem}article.sn>.article-body{padding:0 1rem}}article.sn>.article-header .title{font-size:1.8rem;line-height:2rem;margin-bottom:.5rem}@media(max-width:768px){article.sn>.article-header .title{font-size:1.4rem;line-height:1.5rem}}article.sn>.article-header .facts{margin-bottom:1rem}article.sn>.article-body{margin-bottom:1.5rem}article.sn>.article-body h2{border-bottom:.25rem solid #333;font-size:1.2rem;line-height:1.5rem;margin:1.5rem 0;padding:.5rem 0}article.sn>.article-body h3{border-left:.5rem solid #333;line-height:1.5rem;margin:1.5rem 0;padding:.125rem .5rem}article.sn>.article-body ul,article.sn>.article-body ol{margin:1.5rem 0;padding-left:1.5rem}article.sn>.article-body li{padding-bottom:.5rem;line-height:1.5rem}article.sn>.article-body li:last-child{padding-bottom:0}article.sn>.article-body p{margin:1rem 0;line-height:1.5rem}article.sn>.article-body strong,article.sn>.article-body em{font-style:normal;font-weight:700}article.sn>.article-body strong{box-shadow:0 -.5rem #ffc107 inset}article.sn>.article-body em{color:#8bc34a}article.sn>.article-body h2 code{font-size:1.1rem}article.sn>.article-body h1 code,article.sn>.article-body h3 code,article.sn>.article-body h4 code,article.sn>.article-body h5 code,article.sn>.article-body h6 code{font-size:.9rem}article.sn>.article-body code,article.sn>.article-body pre{font-family:Menlo,Consolas,monospace;font-size:.7rem}article.sn>.article-body pre{background-color:#333;color:#fff;line-height:1rem;margin:1.5rem -2rem;overflow:auto}@media(max-width:768px){article.sn>.article-body pre{margin:1.5rem -1rem}}article.sn>.article-body pre>code{display:block;padding:1rem 2rem}@media(max-width:768px){article.sn>.article-body pre>code{padding:1rem}}article.sn>.article-body p code,article.sn>.article-body h1 code,article.sn>.article-body h2 code,article.sn>.article-body h3 code,article.sn>.article-body h4 code,article.sn>.article-body h5 code,article.sn>.article-body h6 code,article.sn>.article-body li code{background-color:#eceff1;color:#333;border-radius:4px;margin:0 .25rem;padding:.375rem;white-space:nowrap}article.sn>.article-body blockquote{position:relative;border-left:.25rem solid #333;font-size:.8rem;padding:.125rem 1rem;margin:1.5rem 0}@media(max-width:768px){article.sn>.article-body blockquote{font-size:1rem}}article.sn>.article-body blockquote p{margin:.5rem 0;line-height:1rem}article.sn>.article-body figure{margin:1.5rem 0}article.sn>.article-body img,article.sn>.article-body figure img,article.sn>.article-body figure amp-img{box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);max-width:100%;height:100%}article.sn>.article-body figcaption{color:#cfd8dc;font-size:.8rem;font-weight:700;margin-top:.5rem}.facts li{display:inline;font-size:.8rem;margin-right:1rem}.facts i{color:#cfd8dc;margin-right:.5em}.facts.sm li{font-size:.7rem}section.sidebar{margin:2rem 0}section.sidebar>header{font-size:.8rem;font-weight:700;letter-spacing:4px;text-align:center;margin:1.5rem 0}section.footer{margin:1rem 0}section.footer>header{font-size:.8rem;margin:.5rem 0}section.footer>header::before{content:"- "}section.footer>header a{font-weight:700;color:#333;text-decoration:underline}.terms{margin:-.25rem}.terms li{display:inline-block}.terms a{display:block;float:left;background-color:#333;border-radius:4px;color:#fff;font-size:.7rem;margin:.25rem;padding:0 .75rem;line-height:1.75rem}.paging{text-align:center;padding:1rem 0}.paging a{display:inline-block;background-color:#fff;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);border-radius:4px;color:#333;padding:0 1rem;line-height:3rem}.page-title{text-align:center;margin:1rem 0}.page-title::after{content:'';display:block;border-bottom:.25rem solid #333;width:3rem;margin:1.5rem auto}.page-title>.title{font-size:1.2rem;line-height:1.5rem}.share{padding:0}.share a{display:inline-block;box-shadow:0 0 0 1px rgba(63,63,68,5%),0 1px 3px rgba(63,63,68,.1),0 1px 2px rgba(0,0,0,5%);min-width:1rem;height:2rem;border-radius:4px;color:#333;font-size:.8rem;font-weight:700;line-height:2rem;text-align:center;padding:0 .5rem}.adj article.lism{margin-bottom:1rem}.adj header{font-weight:700;font-size:.8rem}.toc{padding:0 2rem;margin:1rem 0}.toc nav>ul{background-color:#eceff1;border-radius:4px;display:inline-block;font-size:.8rem;padding:.5rem 1rem;word-break:break-all;list-style:none}.toc ul{padding:0}.toc ul ul{padding-left:1rem}.toc ul ul>li{font-weight:700;margin:.5rem 0;list-style-type:decimal}.toc ul ul ul{padding-left:1rem}.toc ul ul ul>li{list-style-type:disc;font-weight:500}.toc li{color:#90a4ae}@media(max-width:768px){.toc{padding:0 1rem}}.thumb{background-image:url(https://ryongyong.github.io/images/default.jpg);background-size:cover;background-position:50%}body{font-family:Lato,YuGothic,hiragino kaku gothic pro,Meiryo,sans-serif}.h-logo{font-family:Lobster,cursive}.l-container{max-width:40rem;margin:0 auto}</style>
+</head>
+<body>
+<header class=l-header>
+<h1 class=logo>
+<a href=https://ryongyong.github.io/>パンダ好き</a>
+</h1>
+</header>
+<main>
+<div class=l-container>
+<article class=sn>
+<div class="thumb thumb-2da98ceea10e82b720b460d88311ca2f"></div>
+<header class=article-header>
+<h1 class=title>ABC291-ABCDE</h1>
+<ul class=facts>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-27T23:18:19JST>Feb 27, 2023</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
+</ul>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&title=ABC291-ABCDE" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&text=ABC291-ABCDE&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&t=ABC291-ABCDE" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&title=ABC291-ABCDE" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+</header>
+<div class=article-body><p>AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS）</p>
+<h2 id=a---camel-case>A - camel Case</h2>
+<h3 id=問題文>問題文</h3>
+<p>英大文字および英小文字からなる文字列$S$が与えられます。<br>
+ここで、$S$のうちちょうど1文字だけが英大文字であり、それ以外は全て英小文字です。<br>
+大文字が$S$の先頭から何文字目に登場するか出力してください。<br>
+ただし、$S$の先頭の文字を1文字目とします。</p>
+<h3 id=制約>制約</h3>
+<ul>
+<li>$S$は英大文字および英小文字からなる長さ2以上100以下の文字列</li>
+<li>$S$に大文字はちょうど1つ含まれる。</li>
+</ul>
+<h3 id=解法>解法</h3>
+<p>前から順番に判定するだけ。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    string S ; 
+    cin <span style=color:#f92672>&gt;&gt;</span> S ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> S.size() ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>&lt;=</span> <span style=color:#e6db74>&#39;Z&#39;</span> <span style=color:#f92672>&amp;&amp;</span> S.at(i) <span style=color:#f92672>&gt;=</span> <span style=color:#e6db74>&#39;A&#39;</span>){
+            cout <span style=color:#f92672>&lt;&lt;</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ; 
+        }
+    }
+}
+</code></pre></div><h2 id=b---trimmed-mean>B - Trimmed Mean</h2>
+<h3 id=問題文-1>問題文</h3>
+<p>高橋君は体操の大会に参加しています。
+大会では、$5N$人の審査員それぞれが高橋君の演技に対して評点をつけ、それらを元に次のように高橋君の得点が決定されます。</p>
+<ul>
+<li>高い評点をつけた方から順に$N$人の審査員による評点を無効にする。</li>
+<li>低い評点をつけた方から順に$N$人の審査員による評点を無効にする。</li>
+<li>残りの$3$人の審査員による評点の平均点を高橋君の得点とする。</li>
+</ul>
+<p>より厳密には、審査員がつけた得点の多重集合$S (|{S}|=5N) $に対して次の操作を行って得られたものが高橋君の得点となります。</p>
+<ul>
+<li>「$S$の最大の要素(複数ある場合はそのうちの1つ)を選び、$S$から取り除く」という操作を$N$回繰り返す。</li>
+<li>「$S$の最小の要素(複数ある場合はそのうちの1つ)を選び、$S$から取り除く」という操作を$N$回繰り返す。</li>
+<li>$S$に残った$3N$個の要素の平均を高橋君の得点とする。</li>
+</ul>
+<p>高橋君の演技に対する、$i$人目$(1≤i≤5N)$の審査員の評点は$X_i$点でした。 高橋君の得点を計算してください。</p>
+<h3 id=制約-1>制約</h3>
+<ul>
+<li>$1≤N≤100$</li>
+<li>$0≤X_i≤100$</li>
+<li>入力はすべて整数</li>
+</ul>
+<h3 id=解法-1>解法</h3>
+<ol>
+<li>ソートした後に、前と後ろから$N$個ずつ消す。</li>
+<li>残ったものの平均が高橋くんの得点</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>long</span> <span style=color:#66d9ef>double</span><span style=color:#f92672>&gt;</span> X(<span style=color:#ae81ff>5</span><span style=color:#f92672>*</span>N) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>5</span><span style=color:#f92672>*</span>N ; i<span style=color:#f92672>++</span>) cin <span style=color:#f92672>&gt;&gt;</span> X.at(i) ; 
+    sort(X.begin() , X.end()) ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        X.pop_back() ; 
+    }
+
+    reverse(X.begin() , X.end()) ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        X.pop_back() ; 
+    }
+
+    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>double</span> ans <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span> ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>3</span><span style=color:#f92672>*</span>N ; i<span style=color:#f92672>++</span>){
+        ans <span style=color:#f92672>+=</span> X.at(i) ; 
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> fixed <span style=color:#f92672>&lt;&lt;</span> setprecision(<span style=color:#ae81ff>15</span>) <span style=color:#f92672>&lt;&lt;</span> ans<span style=color:#f92672>/</span>(<span style=color:#66d9ef>long</span> <span style=color:#66d9ef>double</span>)(<span style=color:#ae81ff>3.0</span><span style=color:#f92672>*</span>N) <span style=color:#f92672>&lt;&lt;</span> endl;
+}
+</code></pre></div><h2 id=c---lrud-instructions-2>C - LRUD Instructions 2</h2>
+<h3 id=問題文-2>問題文</h3>
+<p>二次元平面上に高橋君がいます。高橋君は原点から移動を$N$回行いました。<br>
+$N$回の移動は長さ$N$の文字列で表され、意味は次の通りです。</p>
+<ul>
+<li>$i$回目の高橋君の移動後の座標は、移動前の座標を$(x,y)$として、
+<ul>
+<li>$S$の$i$文字目が$R$であるとき$(x+1,y)$</li>
+<li>$S$の$i$文字目が$L$であるとき$(x−1,y)$</li>
+<li>$S$の$i$文字目が$U$であるとき$(x,y+1)$</li>
+<li>$S$の$i$文字目が$D$であるとき$(x,y−1)$</li>
+</ul>
+</li>
+</ul>
+<p>$N$回の移動 (始点と終点を含む) で、高橋君が同じ座標にいたことがあるかどうかを判定してください。</p>
+<h3 id=制約-2>制約</h3>
+<ul>
+<li>$1≤N≤2×10^5$</li>
+<li>$N$は整数</li>
+<li>$S$は$R, L, U, D $のみからなる長さ$N$の文字列</li>
+</ul>
+<h3 id=解法-2>解法</h3>
+<p>　毎回座標を訪れているか検索すると、全体計算量$\mathcal{O}(N^2)$となり間に合わない。ので、mapとかsetとか使えば$\mathcal{O}(N log(N))$になり間に合う。<br>
+　四方向の探索は競プロでよく使うグリッド上の探索と同じ様に$dx, dy$を使って書いてみた。ループを増やすか条件式を4つ書くかで一瞬迷ったけど、後者で書いてみた。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
+    string S ;
+    cin <span style=color:#f92672>&gt;&gt;</span> S ; 
+    map<span style=color:#f92672>&lt;</span>pair<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span> , <span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> , <span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> mp ; 
+    mp[make_pair(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>)]<span style=color:#f92672>++</span> ; 
+
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> dx <span style=color:#f92672>=</span> {<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>0</span>,<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>} ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> dy <span style=color:#f92672>=</span> {<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>0</span>,<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>0</span>} ; 
+
+    <span style=color:#66d9ef>int</span> nx <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
+    <span style=color:#66d9ef>int</span> ny <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;U&#39;</span>){
+            nx <span style=color:#f92672>+=</span> dx.at(<span style=color:#ae81ff>0</span>) ; 
+            ny <span style=color:#f92672>+=</span> dy.at(<span style=color:#ae81ff>0</span>) ; 
+        }
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;R&#39;</span>){
+            nx <span style=color:#f92672>+=</span> dx.at(<span style=color:#ae81ff>1</span>) ; 
+            ny <span style=color:#f92672>+=</span> dy.at(<span style=color:#ae81ff>1</span>) ; 
+        }
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(S.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;D&#39;</span>){
+            nx <span style=color:#f92672>+=</span> dx.at(<span style=color:#ae81ff>2</span>) ; 
+            ny <span style=color:#f92672>+=</span> dy.at(<span style=color:#ae81ff>2</span>) ; 
+        }
+        <span style=color:#66d9ef>else</span>{
+            nx <span style=color:#f92672>+=</span> dx.at(<span style=color:#ae81ff>3</span>) ; 
+            ny <span style=color:#f92672>+=</span> dy.at(<span style=color:#ae81ff>3</span>) ; 
+        }
+
+        <span style=color:#66d9ef>if</span>(mp.find(make_pair(nx,ny)) <span style=color:#f92672>!=</span> mp.end()){
+            cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Yes&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ; 
+        }
+
+        mp[make_pair(nx,ny)]<span style=color:#f92672>++</span> ; 
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+
+}
+</code></pre></div><h2 id=d---flip-cards>D - Flip Cards</h2>
+<h3 id=問題文-3>問題文</h3>
+<p>1 から$N$までの番号がついた$N$枚のカードが一列に並んでいて、各$i (1 ≤ i &lt; N)$に対してカード$i$とカード$i+1$が隣り合っています。<br>
+カード$i$の表には$A_i$が、裏には$B_i$が書かれており、最初全てのカードは表を向いています。</p>
+<p>今から、$N$枚のカードのうち好きな枚数 (0 枚でも良い) を選んで裏返すことを考えます。 裏返すカードの選び方は$2^N$通りありますが、そのうち以下の条件を満たすものの数を$998244353$で割った余りを求めてください。</p>
+<p>選んだカードを裏返した後、どの隣り合う2枚のカードについても、向いている面に書かれた数が相異なる。</p>
+<h3 id=制約-3>制約</h3>
+<ul>
+<li>$1≤N≤2×10^5$</li>
+<li>$1≤A_i,B_i≤10^9$</li>
+<li>入力は全て整数</li>
+</ul>
+<h3 id=解法-3>解法</h3>
+<p>動的計画法($DP$)で解いた。<br>
+$i$列目まで見た時には、$i-1$列目までの通り数は決まっている。こういう、現在状態を考える時に、既に過去の状態が決定しており、過去の状態のみから現在の状態が計算できる場合、動的計画法が使えたり使えなかったりする。</p>
+<p>今回は$i$列目を更新するときは、
+列$i$と$i-1$で、</p>
+<ul>
+<li>$A_{i-1}$と$A_i$</li>
+<li>$A_{i-1}$と$B_i$</li>
+<li>$B_{i-1}$と$A_i$</li>
+<li>$B_{i-1}$と$B_i$</li>
+</ul>
+<p>がそれぞれ一致するかしないかを確認するだけ。
+一致しないならば、決定済みの$i-1$列までの通り数を足し合わせていく。<br>
+MODを取るのを忘れずに。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N ;
+    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> A(N) , B(N) ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        cin <span style=color:#f92672>&gt;&gt;</span> A.at(i) <span style=color:#f92672>&gt;&gt;</span> B.at(i) ; 
+    }
+    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> mod <span style=color:#f92672>=</span> <span style=color:#ae81ff>998244353</span> ; 
+
+    vector<span style=color:#f92672>&lt;</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> <span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> dp(N , vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span><span style=color:#f92672>&gt;</span> (<span style=color:#ae81ff>2</span>)) ; 
+    dp.at(<span style=color:#ae81ff>0</span>).at(<span style=color:#ae81ff>0</span>) <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; 
+    dp.at(<span style=color:#ae81ff>0</span>).at(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> nx <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
+
+        <span style=color:#66d9ef>if</span>((A.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>!=</span> A.at(i) )){
+            dp.at(i).at(<span style=color:#ae81ff>0</span>) <span style=color:#f92672>+=</span> dp.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(<span style=color:#ae81ff>0</span>) ; 
+            dp.at(i).at(<span style=color:#ae81ff>0</span>) <span style=color:#f92672>%=</span> mod ; 
+        }
+
+        <span style=color:#66d9ef>if</span>(B.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>!=</span> A.at(i)){
+            dp.at(i).at(<span style=color:#ae81ff>0</span>) <span style=color:#f92672>+=</span> dp.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(<span style=color:#ae81ff>1</span>) ; 
+            dp.at(i).at(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>%=</span> mod ; 
+        }
+
+        <span style=color:#66d9ef>if</span>((A.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>!=</span> B.at(i) )){
+            dp.at(i).at(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>+=</span> dp.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(<span style=color:#ae81ff>0</span>) ; 
+            dp.at(i).at(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>%=</span> mod ; 
+        }
+
+        <span style=color:#66d9ef>if</span>(B.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>!=</span> B.at(i)){
+            dp.at(i).at(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>+=</span> dp.at(i<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(<span style=color:#ae81ff>1</span>) ; 
+            dp.at(i).at(<span style=color:#ae81ff>1</span>) <span style=color:#f92672>%=</span> mod ; 
+        }
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> ( dp.at(N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(<span style=color:#ae81ff>0</span>) <span style=color:#f92672>+</span> dp.at(N<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>).at(<span style=color:#ae81ff>1</span>) )<span style=color:#f92672>%</span>mod <span style=color:#f92672>&lt;&lt;</span> endl;
+
+}
+</code></pre></div><h2 id=e---find-permutation>E - Find Permutation</h2>
+<h3 id=問題文-4>問題文</h3>
+<p>$1,…,N$の並び替えである長さ$N$の数列$A=(A_1,…,A_N)$があります。<br>
+あなたは$A$を知りませんが、$M$個の整数の組$(X_i,Y_i)$について、$A_{X_i} &lt; A_{Y_i}$が成り立つことを知っています。<br>
+$A$を一意に特定できるかどうか判定し、できるなら$A$を求めてください。</p>
+<h3 id=制約-4>制約</h3>
+<ul>
+<li>$2≤N≤2×10^5$</li>
+<li>$1≤M≤2×10^5$</li>
+<li>$1≤X_i,Y_i≤N$</li>
+<li>入力は全て整数である</li>
+<li>入力に矛盾しない$A$が存在する</li>
+</ul>
+<h3 id=解法-4>解法</h3>
+<p>トポロジカルソートが一意に決まりますか？を判定する問題。<br>
+一意になる条件は、常にqueueに入っている状態の個数が1個以下であること。なので、実際にトポロジカルソートを試してみて、queueから取り出す前にサイズを確認する。</p>
+<ul>
+<li>途中でサイズが2以上になれば$No$</li>
+<li>最後までいけば$Yes$と出力して、トポロジカル順序を出力</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+
+<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
+    <span style=color:#66d9ef>int</span> N , M ; 
+    cin <span style=color:#f92672>&gt;&gt;</span> N <span style=color:#f92672>&gt;&gt;</span> M ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> X(M) , Y(M) ; 
+    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> deg(N) ; 
+    vector<span style=color:#f92672>&lt;</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> G(N, vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>()) ; 
+
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> M ; i<span style=color:#f92672>++</span>){
+        cin <span style=color:#f92672>&gt;&gt;</span> X.at(i) <span style=color:#f92672>&gt;&gt;</span> Y.at(i) ; 
+        X.at(i)<span style=color:#f92672>--</span> ; 
+        Y.at(i)<span style=color:#f92672>--</span> ; 
+        G.at(X.at(i)).push_back(Y.at(i)) ; 
+        deg.at(Y.at(i))<span style=color:#f92672>++</span> ; 
+    }
+
+    deque<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> q ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
+        <span style=color:#66d9ef>if</span>(deg.at(i) <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>){
+            q.push_back(i) ; 
+        }
+    }
+
+    vector<span style=color:#f92672>&lt;</span>pair<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span> , <span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> <span style=color:#f92672>&gt;</span> ans ; 
+    <span style=color:#66d9ef>int</span> cnt <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; 
+
+    <span style=color:#66d9ef>while</span>(<span style=color:#f92672>!</span>q.empty()){
+        <span style=color:#66d9ef>if</span>(q.size() <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>){
+            cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;No&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+            <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span> ; 
+        }
+        
+        <span style=color:#66d9ef>int</span> now <span style=color:#f92672>=</span> q.front() ; 
+        q.pop_front() ; 
+
+        ans.push_back(make_pair(now,cnt)) ;
+        cnt<span style=color:#f92672>++</span> ;  
+        
+        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> nx : G.at(now)){
+            deg.at(nx)<span style=color:#f92672>--</span> ; 
+            <span style=color:#66d9ef>if</span>(deg.at(nx)) <span style=color:#66d9ef>continue</span> ; 
+            q.push_back(nx) ; 
+        }
+    }
+
+    cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Yes&#34;</span> <span style=color:#f92672>&lt;&lt;</span> endl;
+    sort(ans.begin() , ans.end()) ; 
+    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>) cout <span style=color:#f92672>&lt;&lt;</span> ans.at(i).second <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34; &#34;</span> ;
+    cout <span style=color:#f92672>&lt;&lt;</span> endl;
+
+}
+</code></pre></div></div>
+<footer class=article-footer>
+<aside class=share>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&title=ABC291-ABCDE" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&text=ABC291-ABCDE&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&t=ABC291-ABCDE" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f&title=ABC291-ABCDE" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fatcoder%2fabc291%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+</aside>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/categories/c++/>C++</a></li>
+<li><a href=https://ryongyong.github.io/categories/topological-sort/>Topological Sort</a></li>
+<li><a href=https://ryongyong.github.io/categories/dp/>DP</a></li>
+<li><a href=https://ryongyong.github.io/categories/atcoder/>AtCoder</a></li>
+</ul>
+</section>
+<section class=footer>
+<header>
+<a href=https://ryongyong.github.io/tags/>TAGS</a>
+</header>
+<ul class=terms>
+<li><a href=https://ryongyong.github.io/tags/atcoder/>AtCoder</a></li>
+</ul>
+</section>
+</footer>
+</article>
+<div class="adj mrow">
+<div class="mcol c6">
+<header>Next Article</header>
+</div>
+<div class="mcol c6">
+<header>Previous Article</header>
+<article class=lism>
+<a href=https://ryongyong.github.io/amp/post/study/open3d-normals/>
+<div class="thumb thumb-84daa6d41eeb3101c7a3700ec2823001"></div>
+<div class=inner>
+<div class=title>Open3Dを用いた法線推定</div>
+<ul class="facts sm">
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=27007-02-27T11:47:53JST>Feb 27, 2023</time></li>
+<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
+</ul>
+</div>
+</a>
+</article>
+</div>
+</div>
+</div>
+</main>
+<footer class=l-footer>
+<div class=l-container>
+<p><span class=h-logo>&copy; パンダ好き</span></p>
+<aside>
+<p>Powered by <a href=https://gohugo.io/>Hugo</a>.</p>
+<p><a href=https://github.com/dim0627/hugo_theme_robust>Robust</a> designed by <a href=http://yet.unresolved.xyz/>Daisuke Tsuji</a>.</p>
+</aside>
+</div>
+</footer>
+</body>
+</html>
