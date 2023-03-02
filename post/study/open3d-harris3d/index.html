@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset=utf-8>
-<title>ABC134-D - パンダ好き</title>
+<title>Open3DでHarris特徴量を計算する - パンダ好き</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -17,23 +17,23 @@
 <meta name=theme-color content="#263238">
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
-<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/atcoder/abc134-d/ title=パンダ好き>
-<meta name=description content="D - Preparing Boxes (Diff-926) $N$個の空の箱が横一列に並んでいます。 左から $i(1≤i≤N)$ 番目の箱には整数 $i$が書かれています。 すぬけさんは、それぞれの">
-<meta property="og:title" content="ABC134-D - パンダ好き">
+<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/open3d-harris3d/ title=パンダ好き>
+<meta name=description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] =">
+<meta property="og:title" content="Open3DでHarris特徴量を計算する - パンダ好き">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ryongyong.github.io/post/atcoder/abc134-d/">
+<meta property="og:url" content="https://ryongyong.github.io/post/study/open3d-harris3d/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="D - Preparing Boxes (Diff-926) $N$個の空の箱が横一列に並んでいます。 左から $i(1≤i≤N)$ 番目の箱には整数 $i$が書かれています。 すぬけさんは、それぞれの">
+<meta property="og:description" content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] =">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
-<meta name=twitter:url content="https://ryongyong.github.io/post/atcoder/abc134-d/">
-<meta name=twitter:title content="ABC134-D - パンダ好き">
-<meta name=twitter:description content="D - Preparing Boxes (Diff-926) $N$個の空の箱が横一列に並んでいます。 左から $i(1≤i≤N)$ 番目の箱には整数 $i$が書かれています。 すぬけさんは、それぞれの">
+<meta name=twitter:url content="https://ryongyong.github.io/post/study/open3d-harris3d/">
+<meta name=twitter:title content="Open3DでHarris特徴量を計算する - パンダ好き">
+<meta name=twitter:description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] =">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"ABC134-D-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-15T01:44:12JST","dateModified":"2023-02-15T01:44:12JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"D - Preparing Boxes (Diff-926) $N$個の空の箱が横一列に並んでいます。 左から $i(1≤i≤N)$ 番目の箱には整数 $i$が書かれています。 すぬけさんは、それぞれの"}</script>
-<link rel=canonical href=https://ryongyong.github.io/post/atcoder/abc134-d/>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3DでHarris特徴量を計算する-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-02T15:55:42JST","dateModified":"2023-03-02T15:55:42JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres \u002b= sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] ="}</script>
+<link rel=canonical href=https://ryongyong.github.io/post/study/open3d-harris3d/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -53,87 +53,106 @@
 <div class=mrow>
 <div class="mcol c8">
 <article class=sn>
-<div class="thumb thumb-8d181aa014cd2e6c82d30ec2895ead37"></div>
+<div class="thumb thumb-6431da5bcf48fcc1c3d885871603bb2a"></div>
 <header class=article-header>
-<h1 class=title>ABC134-D</h1>
+<h1 class=title>Open3DでHarris特徴量を計算する</h1>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-15T01:44:12JST>Feb 15, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-03-02T15:55:42JST>Mar 2, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
 </ul>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&title=ABC134-D" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&text=ABC134-D&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&t=ABC134-D" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&title=ABC134-D" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&title=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&text=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&t=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&title=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 </header>
-<div class=article-body><h3 id=d---preparing-boxes-diff-926>D - Preparing Boxes (Diff-926)</h3>
-<p>$N$個の空の箱が横一列に並んでいます。 左から
-$i(1≤i≤N)$ 番目の箱には整数
-$i$が書かれています。<br>
-すぬけさんは、それぞれの箱に対してボールを
-$1$個入れるか何も入れないかを選ぶことができます。<br>
-ここで、以下の条件を満たすようなボールの入れ方を、いいボールの入れ方と定めます。
-$1$以上
-$N$以下の任意の整数
-$i$について、
-$i $の倍数が書かれた箱に入っているボールの個数の和を
-$2$で割った余りが
-$a_i$である。<br>
-いいボールの入れ方は存在するでしょうか。存在するならば
-$1$つ求めてください。</p>
-<h2 id=解法>解法</h2>
-<p>　ある箱にボールを入れるor入れない事による影響を考える。ボールを入れると、どこに影響が出るかと言うと、これは箱$i$にボールを入れるとした時、その$i$の倍数の番号がついた箱。これは$i$より必ず大きくなることがわかる。<br>
-　ということは箱番号$j$が大きいものから順にボールを入れるか決めていき、小さいもので辻褄を合わせることで、必ずそのようなボールの入れ方は決めることができることがわかる。</p>
-<h3 id=提出>提出</h3>
-<p>0-indexedだと頭がこんがらがるので、1-indexedとして実装した。<br>
-$idx \times co$は箱$i$の倍数を表しているが、long longになり得るので、そこだけは気をつける点かなと思った。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+<div class=article-body><p>まだ途中なので、スクリプトだけ置いとく</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys 
+<span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
+<span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np 
 
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-    <span style=color:#66d9ef>int</span> N ;
-    cin <span style=color:#f92672>&gt;&gt;</span> N ; 
-    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> a(N<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) ;
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; i <span style=color:#f92672>&lt;=</span> N ; i<span style=color:#f92672>++</span>) cin <span style=color:#f92672>&gt;&gt;</span> a.at(i) ; 
-    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> ans ; 
-    vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> b(N<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>) ; 
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> N ; i <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span> ; i<span style=color:#f92672>--</span>){
-        <span style=color:#66d9ef>int</span> now <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
-        <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> idx <span style=color:#f92672>=</span> i ; 
-        <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> co <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; 
-        <span style=color:#66d9ef>while</span>(idx <span style=color:#f92672>*</span> co <span style=color:#f92672>&lt;=</span> N){
-            now <span style=color:#f92672>+=</span> b.at(idx<span style=color:#f92672>*</span>co) ; 
-            co<span style=color:#f92672>++</span> ; 
-        }
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>keypoints_to_spheres</span>(keypoints, radius):
+    spheres <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>TriangleMesh()
+    <span style=color:#66d9ef>for</span> keypoint <span style=color:#f92672>in</span> keypoints<span style=color:#f92672>.</span>points:
+        sphere <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>TriangleMesh<span style=color:#f92672>.</span>create_sphere(radius<span style=color:#f92672>=</span>radius)
+        sphere<span style=color:#f92672>.</span>translate(keypoint)
+        spheres <span style=color:#f92672>+=</span> sphere
+    spheres<span style=color:#f92672>.</span>paint_uniform_color([<span style=color:#ae81ff>1.0</span>, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>0.0</span>])
+    <span style=color:#66d9ef>return</span> spheres
 
-        <span style=color:#66d9ef>if</span>(now <span style=color:#f92672>%</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>!=</span> a.at(i)){
-            ans.push_back(i) ; 
-            b.at(i) <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ;
-        }
-    }
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>nms</span>(pcd , harris, is_active, inds,max_nn):
+    pcd_tree <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeFlann(pcd)
 
-    cout <span style=color:#f92672>&lt;&lt;</span> ans.size() <span style=color:#f92672>&lt;&lt;</span> endl;
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>auto</span> p : ans) cout <span style=color:#f92672>&lt;&lt;</span> p <span style=color:#f92672>&lt;&lt;</span> endl;
+    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points))):
+        <span style=color:#66d9ef>if</span> is_active[i]:
+            [num_nn, inds, _] <span style=color:#f92672>=</span> pcd_tree<span style=color:#f92672>.</span>search_knn_vector_3d(pcd<span style=color:#f92672>.</span>points[i], max_nn)
+            inds<span style=color:#f92672>.</span>pop(harris[inds]<span style=color:#f92672>.</span>argmax() )
+            is_active[inds] <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+    <span style=color:#66d9ef>return</span> is_active
 
-}
+<span style=color:#75715e># harris3d - harrisのコーナー検出の3D版</span>
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>harris3d</span>(pcd , radius <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.01</span>, max_nn <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>, threshold <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.001</span>):
+    <span style=color:#75715e># Kd-Treeで近傍点探索</span>
+    pcd<span style=color:#f92672>.</span>estimate_normals(search_param <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeSearchParamHybrid(radius <span style=color:#f92672>=</span> radius, max_nn <span style=color:#f92672>=</span> max_nn))
+    pcd_tree <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeFlann(pcd)
 
+    <span style=color:#75715e># 特徴点の候補</span>
+    harris <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>zeros(len(np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points)) )
+    <span style=color:#75715e># NMSの結果を保存</span>
+    is_active <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>zeros(len(np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points)), dtype <span style=color:#f92672>=</span> bool)
+
+    <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points))):
+        <span style=color:#75715e># 関数search_knn_vector_3dは、アンカーポイントの最近傍点のインデックスのリストを返す</span>
+        <span style=color:#75715e># num_nn は近傍点の個数, idxsはインデックス</span>
+        [num_nn, inds, _] <span style=color:#f92672>=</span> pcd_tree<span style=color:#f92672>.</span>search_knn_vector_3d(pcd<span style=color:#f92672>.</span>points[i], max_nn)
+        <span style=color:#75715e># indsだけ抜き出し</span>
+        pcd_normals <span style=color:#f92672>=</span> pcd<span style=color:#f92672>.</span>select_by_index(inds)
+
+        pcd_normals<span style=color:#f92672>.</span>points <span style=color:#f92672>=</span> pcd_normals<span style=color:#f92672>.</span>normals
+
+        <span style=color:#75715e># 平均と共分散行列</span>
+        [_,covar] <span style=color:#f92672>=</span> pcd_normals<span style=color:#f92672>.</span>compute_mean_and_covariance()
+
+        <span style=color:#75715e># det/trace</span>
+        harris[i] <span style=color:#f92672>=</span> np<span style=color:#f92672>.</span>linalg<span style=color:#f92672>.</span>det(covar)<span style=color:#f92672>/</span>np<span style=color:#f92672>.</span>trace(covar)
+
+        <span style=color:#75715e># det/traceが基準を超えているか？</span>
+        <span style=color:#66d9ef>if</span> (harris[i] <span style=color:#f92672>&gt;</span> threshold):
+            is_active[i] <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span> 
+
+    <span style=color:#75715e># Non maximum Suppression</span>
+    is_active <span style=color:#f92672>=</span> nms(pcd ,harris, is_active, inds,max_nn)
+
+    <span style=color:#75715e># 最終的な特徴点をselect by indexで生成</span>
+    keypoints <span style=color:#f92672>=</span> pcd<span style=color:#f92672>.</span>select_by_index(np<span style=color:#f92672>.</span>where(is_active)[<span style=color:#ae81ff>0</span>])
+    
+    <span style=color:#66d9ef>return</span> keypoints
+
+
+filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>]
+pcd <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_point_cloud(filename)
+
+keypoints <span style=color:#f92672>=</span> harris3d(pcd, <span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>0.00001</span>) 
+pcd<span style=color:#f92672>.</span>paint_uniform_color([<span style=color:#ae81ff>1.0</span>,<span style=color:#ae81ff>1.0</span>,<span style=color:#ae81ff>0</span>])
+radius <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.001</span>
+o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([keypoints_to_spheres(keypoints, radius) , pcd])
 </code></pre></div></div>
 <footer class=article-footer>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&title=ABC134-D" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&text=ABC134-D&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&t=ABC134-D" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f&title=ABC134-D" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc134-d%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&title=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&text=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&t=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f&title=Open3D%e3%81%a7Harris%e7%89%b9%e5%be%b4%e9%87%8f%e3%82%92%e8%a8%88%e7%ae%97%e3%81%99%e3%82%8b" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fopen3d-harris3d%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 <section class=footer>
 <header>
 <a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/categories/atcoder/>AtCoder</a></li>
+<li><a href=https://ryongyong.github.io/categories/study/>Study</a></li>
 </ul>
 </section>
 <section class=footer>
@@ -141,8 +160,9 @@ $idx \times co$は箱$i$の倍数を表しているが、long longになり得�
 <a href=https://ryongyong.github.io/tags/>TAGS</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/tags/atcoder/>AtCoder</a></li>
-<li><a href=https://ryongyong.github.io/tags/c++/>C++</a></li>
+<li><a href=https://ryongyong.github.io/tags/open3d/>Open3D</a></li>
+<li><a href=https://ryongyong.github.io/tags/3d%E7%82%B9%E7%BE%A4%E5%87%A6%E7%90%86/>3D点群処理</a></li>
+<li><a href=https://ryongyong.github.io/tags/python/>Python</a></li>
 </ul>
 </section>
 </footer>
@@ -150,28 +170,16 @@ $idx \times co$は箱$i$の倍数を表しているが、long longになり得�
 <div class="adj mrow">
 <div class="mcol c6">
 <header>Next Article</header>
-<article class=lism>
-<a href=https://ryongyong.github.io/post/atcoder/abc237-vertual/>
-<div class="thumb thumb-9d8de16ad11eff1fb66c1c781dac8ad5"></div>
-<div class=inner>
-<div class=title>ABC237(途中までバーチャル参加)</div>
-<ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=17007-02-17T03:16:18JST>Feb 17, 2023</time></li>
-<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
-</ul>
-</div>
-</a>
-</article>
 </div>
 <div class="mcol c6">
 <header>Previous Article</header>
 <article class=lism>
-<a href=https://ryongyong.github.io/post/dialy/20230214/>
-<div class="thumb thumb-b9918eaa329ca9fdfcc048a08f53c4b0"></div>
+<a href=https://ryongyong.github.io/post/atcoder/abc174-c/>
+<div class="thumb thumb-9e7e4d9f433af2a40b53dbdbd3cb7abb"></div>
 <div class=inner>
-<div class=title>2023年02月14日</div>
+<div class=title>ABC174-C</div>
 <ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=14007-02-14T02:23:39JST>Feb 14, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=1007-03-01T23:55:47JST>Mar 1, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 </div>
