@@ -32,6 +32,14 @@ $$R = \frac{det(M)}{tr(M)} $$
 
 が大きいものを選ぶことで、同じ特徴点付近にいくつもの点が選ばれるのを防ぐ(Non Maximimum Supuressionというらしい)。
 
+### やってみた
+
+黄色いぴょんに赤い点が付いているのが今回計算したハリス特徴量
+
+鼻とか、足周りの曲がってるところとか、耳元とか、いろいろ赤くなっているのがわかると思う
+
+![代替テキスト](/images/harris.png)
+
 ```python
 import sys 
 import open3d as o3d
