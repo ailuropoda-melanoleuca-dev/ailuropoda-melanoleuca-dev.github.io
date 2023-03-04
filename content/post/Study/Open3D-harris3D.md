@@ -15,6 +15,7 @@ import sys
 import open3d as o3d
 import numpy as np 
 
+# 指定した点の色を変更し、強調する
 def keypoints_to_spheres(keypoints, radius):
     spheres = o3d.geometry.TriangleMesh()
     for keypoint in keypoints.points:
@@ -24,20 +25,24 @@ def keypoints_to_spheres(keypoints, radius):
     spheres.paint_uniform_color([1.0, 0.0, 0.0])
     return spheres
 
-def nms(pcd , harris, is_active, inds,max_nn):
+def nms(pcd , harris, is_active, inds, max_nn):
+    # Kd-Treeで近傍点探索
     pcd_tree = o3d.geometry.KDTreeFlann(pcd)
 
+    # 特徴点の周りmax_nn個の頂点を確認し、一番評価が高いもののみ残す
     for i in range(len(np.asarray(pcd.points))):
         if is_active[i]:
             [num_nn, inds, _] = pcd_tree.search_knn_vector_3d(pcd.points[i], max_nn)
             inds.pop(harris[inds].argmax() )
             is_active[inds] = False
+
     return is_active
 
 # harris3d - harrisのコーナー検出の3D版
 def harris3d(pcd , radius = 0.01, max_nn = 100, threshold = 0.001):
-    # Kd-Treeで近傍点探索
+    # Kd-Treeで法線計算
     pcd.estimate_normals(search_param = o3d.geometry.KDTreeSearchParamHybrid(radius = radius, max_nn = max_nn))
+    # Kd-Treeで近傍点探索
     pcd_tree = o3d.geometry.KDTreeFlann(pcd)
 
     # 特徴点の候補
@@ -65,7 +70,7 @@ def harris3d(pcd , radius = 0.01, max_nn = 100, threshold = 0.001):
             is_active[i] = True 
 
     # Non maximum Suppression
-    is_active = nms(pcd ,harris, is_active, inds,max_nn)
+    is_active = nms(pcd ,harris, is_active, inds, max_nn)
 
     # 最終的な特徴点をselect by indexで生成
     keypoints = pcd.select_by_index(np.where(is_active)[0])
@@ -76,8 +81,10 @@ def harris3d(pcd , radius = 0.01, max_nn = 100, threshold = 0.001):
 filename = sys.argv[1]
 pcd = o3d.io.read_point_cloud(filename)
 
-keypoints = harris3d(pcd, 10,10,0.00001) 
+keypoints = harris3d(pcd, 1000, 100, 0.0001) 
+
 pcd.paint_uniform_color([1.0,1.0,0])
 radius = 0.001
+
 o3d.visualization.draw_geometries([keypoints_to_spheres(keypoints, radius) , pcd])
 ```
