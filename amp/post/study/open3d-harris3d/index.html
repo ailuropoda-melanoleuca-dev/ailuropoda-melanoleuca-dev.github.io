@@ -75,6 +75,10 @@
 <p>変化がある一定以上であれば、とりあえず全てメモしておき、最後に、周りの特徴点をチェックし、その中で一番、基準値$R$</p>
 <p>$$R = \frac{det(M)}{tr(M)} $$</p>
 <p>が大きいものを選ぶことで、同じ特徴点付近にいくつもの点が選ばれるのを防ぐ(Non Maximimum Supuressionというらしい)。</p>
+<h3 id=やってみた>やってみた</h3>
+<p>黄色いぴょんに赤い点が付いているのが今回計算したハリス特徴量</p>
+<p>鼻とか、足周りの曲がってるところとか、耳元とか、いろいろ赤くなっているのがわかると思う</p>
+<p><img src=/images/harris.png alt=代替テキスト></p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys 
 <span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
 <span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np 
