@@ -1,8 +1,8 @@
 +++
 draft = false
 thumbnail = ""
-tags = []
-categories = []
+tags = ["AtCoder", "C++", "Cumulative Sum"]
+categories = ["AtCoder"]
 date = "2023-03-04T16:53:24+09:00"
 title = "ABC181-E"
 description = ""
