@@ -67,7 +67,7 @@
 <li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-03-02T15:55:42JST>Mar 2, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
-<div class=summary>まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd</div>
+<div class=summary>Harris-3D 二次元画像処理ではHarris特徴量の計算は割とよくやる。 Harrisのコーナー検出 輝度値や明度値にした画像にフィルターを縦横に移動させな</div>
 </div>
 </a>
 </article>

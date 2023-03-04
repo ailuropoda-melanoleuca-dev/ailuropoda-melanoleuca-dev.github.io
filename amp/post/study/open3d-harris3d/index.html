@@ -11,21 +11,21 @@
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
 <link rel=canonical type=text/html href=https://ryongyong.github.io/post/study/open3d-harris3d/ title=パンダ好き>
-<meta name=description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd">
+<meta name=description content="Harris-3D 二次元画像処理ではHarris特徴量の計算は割とよくやる。 Harrisのコーナー検出 輝度値や明度値にした画像にフィルターを縦横に移動させな">
 <meta property="og:title" content="Open3DでHarris特徴量を計算する - パンダ好き">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryongyong.github.io/amp/post/study/open3d-harris3d/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd">
+<meta property="og:description" content="Harris-3D 二次元画像処理ではHarris特徴量の計算は割とよくやる。 Harrisのコーナー検出 輝度値や明度値にした画像にフィルターを縦横に移動させな">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
 <meta name=twitter:url content="https://ryongyong.github.io/amp/post/study/open3d-harris3d/">
 <meta name=twitter:title content="Open3DでHarris特徴量を計算する - パンダ好き">
-<meta name=twitter:description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd">
+<meta name=twitter:description content="Harris-3D 二次元画像処理ではHarris特徴量の計算は割とよくやる。 Harrisのコーナー検出 輝度値や明度値にした画像にフィルターを縦横に移動させな">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3DでHarris特徴量を計算する-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-02T15:55:42JST","dateModified":"2023-03-02T15:55:42JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres \u002b= sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3DでHarris特徴量を計算する-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-02T15:55:42JST","dateModified":"2023-03-02T15:55:42JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"Harris-3D 二次元画像処理ではHarris特徴量の計算は割とよくやる。 Harrisのコーナー検出 輝度値や明度値にした画像にフィルターを縦横に移動させな"}</script>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -55,7 +55,26 @@
 <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fstudy%2fopen3d-harris3d%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 </header>
-<div class=article-body><p>まだ途中なので、スクリプトだけ置いとく</p>
+<div class=article-body><h1 id=harris-3d>Harris-3D</h1>
+<p>二次元画像処理ではHarris特徴量の計算は割とよくやる。</p>
+<h3 id=harrisのコーナー検出>Harrisのコーナー検出</h3>
+<p>輝度値や明度値にした画像にフィルターを縦横に移動させながら、その値の変化を見る。</p>
+<ul>
+<li>縦横にも変化が大きいのはコーナー</li>
+<li>縦、あるいは横のみに変化が大きいのはエッジ</li>
+<li>変化が大きくないのは特徴的ではないところ</li>
+</ul>
+<p>ちなみに以下がわかりやすい</p>
+<ul>
+<li><a href=https://campkougaku.com/2021/09/22/harris>Harrisのコーナー検出を魂で理解する</a></li>
+<li>A Combined Corner and Edge Detector(原論文)</li>
+</ul>
+<p>フィルターは長方形でなくてもよく、円形だったりする場合もある(使ったことないけど)。</p>
+<h3 id=harris-3d-1>Harris-3D</h3>
+<p>ここでは、点群の法線の変化をみることで、特徴点を判定している。</p>
+<p>変化がある一定以上であれば、とりあえず全てメモしておき、最後に、周りの特徴点をチェックし、その中で一番、基準値$R$</p>
+<p>$$R = \frac{det(M)}{tr(M)} $$</p>
+<p>が大きいものを選ぶことで、同じ特徴点付近にいくつもの点が選ばれるのを防ぐ(Non Maximimum Supuressionというらしい)。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> sys 
 <span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
 <span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np 
