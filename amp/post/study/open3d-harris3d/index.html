@@ -11,21 +11,21 @@
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
 <link rel=canonical type=text/html href=https://ryongyong.github.io/post/study/open3d-harris3d/ title=パンダ好き>
-<meta name=description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] =">
+<meta name=description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd">
 <meta property="og:title" content="Open3DでHarris特徴量を計算する - パンダ好き">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryongyong.github.io/amp/post/study/open3d-harris3d/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] =">
+<meta property="og:description" content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
 <meta name=twitter:url content="https://ryongyong.github.io/amp/post/study/open3d-harris3d/">
 <meta name=twitter:title content="Open3DでHarris特徴量を計算する - パンダ好き">
-<meta name=twitter:description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] =">
+<meta name=twitter:description content="まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres += sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3DでHarris特徴量を計算する-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-02T15:55:42JST","dateModified":"2023-03-02T15:55:42JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres \u002b= sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd , harris, is_active, inds,max_nn): pcd_tree = o3d.geometry.KDTreeFlann(pcd) for i in range(len(np.asarray(pcd.points))): if is_active[i]: [num_nn, inds, _] ="}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"Open3DでHarris特徴量を計算する-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-02T15:55:42JST","dateModified":"2023-03-02T15:55:42JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"まだ途中なので、スクリプトだけ置いとく import sys import open3d as o3d import numpy as np # 指定した点の色を変更し、強調する def keypoints_to_spheres(keypoints, radius): spheres = o3d.geometry.TriangleMesh() for keypoint in keypoints.points: sphere = o3d.geometry.TriangleMesh.create_sphere(radius=radius) sphere.translate(keypoint) spheres \u002b= sphere spheres.paint_uniform_color([1.0, 0.0, 0.0]) return spheres def nms(pcd"}</script>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -60,6 +60,7 @@
 <span style=color:#f92672>import</span> open3d <span style=color:#66d9ef>as</span> o3d
 <span style=color:#f92672>import</span> numpy <span style=color:#66d9ef>as</span> np 
 
+<span style=color:#75715e># 指定した点の色を変更し、強調する</span>
 <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>keypoints_to_spheres</span>(keypoints, radius):
     spheres <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>TriangleMesh()
     <span style=color:#66d9ef>for</span> keypoint <span style=color:#f92672>in</span> keypoints<span style=color:#f92672>.</span>points:
@@ -69,20 +70,24 @@
     spheres<span style=color:#f92672>.</span>paint_uniform_color([<span style=color:#ae81ff>1.0</span>, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>0.0</span>])
     <span style=color:#66d9ef>return</span> spheres
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>nms</span>(pcd , harris, is_active, inds,max_nn):
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>nms</span>(pcd , harris, is_active, inds, max_nn):
+    <span style=color:#75715e># Kd-Treeで近傍点探索</span>
     pcd_tree <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeFlann(pcd)
 
+    <span style=color:#75715e># 特徴点の周りmax_nn個の頂点を確認し、一番評価が高いもののみ残す</span>
     <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(len(np<span style=color:#f92672>.</span>asarray(pcd<span style=color:#f92672>.</span>points))):
         <span style=color:#66d9ef>if</span> is_active[i]:
             [num_nn, inds, _] <span style=color:#f92672>=</span> pcd_tree<span style=color:#f92672>.</span>search_knn_vector_3d(pcd<span style=color:#f92672>.</span>points[i], max_nn)
             inds<span style=color:#f92672>.</span>pop(harris[inds]<span style=color:#f92672>.</span>argmax() )
             is_active[inds] <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+
     <span style=color:#66d9ef>return</span> is_active
 
 <span style=color:#75715e># harris3d - harrisのコーナー検出の3D版</span>
 <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>harris3d</span>(pcd , radius <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.01</span>, max_nn <span style=color:#f92672>=</span> <span style=color:#ae81ff>100</span>, threshold <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.001</span>):
-    <span style=color:#75715e># Kd-Treeで近傍点探索</span>
+    <span style=color:#75715e># Kd-Treeで法線計算</span>
     pcd<span style=color:#f92672>.</span>estimate_normals(search_param <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeSearchParamHybrid(radius <span style=color:#f92672>=</span> radius, max_nn <span style=color:#f92672>=</span> max_nn))
+    <span style=color:#75715e># Kd-Treeで近傍点探索</span>
     pcd_tree <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>geometry<span style=color:#f92672>.</span>KDTreeFlann(pcd)
 
     <span style=color:#75715e># 特徴点の候補</span>
@@ -110,7 +115,7 @@
             is_active[i] <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span> 
 
     <span style=color:#75715e># Non maximum Suppression</span>
-    is_active <span style=color:#f92672>=</span> nms(pcd ,harris, is_active, inds,max_nn)
+    is_active <span style=color:#f92672>=</span> nms(pcd ,harris, is_active, inds, max_nn)
 
     <span style=color:#75715e># 最終的な特徴点をselect by indexで生成</span>
     keypoints <span style=color:#f92672>=</span> pcd<span style=color:#f92672>.</span>select_by_index(np<span style=color:#f92672>.</span>where(is_active)[<span style=color:#ae81ff>0</span>])
@@ -121,9 +126,11 @@
 filename <span style=color:#f92672>=</span> sys<span style=color:#f92672>.</span>argv[<span style=color:#ae81ff>1</span>]
 pcd <span style=color:#f92672>=</span> o3d<span style=color:#f92672>.</span>io<span style=color:#f92672>.</span>read_point_cloud(filename)
 
-keypoints <span style=color:#f92672>=</span> harris3d(pcd, <span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>10</span>,<span style=color:#ae81ff>0.00001</span>) 
+keypoints <span style=color:#f92672>=</span> harris3d(pcd, <span style=color:#ae81ff>1000</span>, <span style=color:#ae81ff>100</span>, <span style=color:#ae81ff>0.0001</span>) 
+
 pcd<span style=color:#f92672>.</span>paint_uniform_color([<span style=color:#ae81ff>1.0</span>,<span style=color:#ae81ff>1.0</span>,<span style=color:#ae81ff>0</span>])
 radius <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.001</span>
+
 o3d<span style=color:#f92672>.</span>visualization<span style=color:#f92672>.</span>draw_geometries([keypoints_to_spheres(keypoints, radius) , pcd])
 </code></pre></div></div>
 <footer class=article-footer>
