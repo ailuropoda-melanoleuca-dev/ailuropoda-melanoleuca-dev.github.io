@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset=utf-8>
-<title>ABC234-CDE - パンダ好き</title>
+<title>データ分析100本ノック(11-15) - パンダ好き</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -17,23 +17,23 @@
 <meta name=theme-color content="#263238">
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
-<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/atcoder/abc234-cde/ title=パンダ好き>
-<meta name=description content="C - Happy New Year! 問題文 $10$進法で表記したときに$0,2$のみからなる正整数のうち、 $K$番目に小さいものを求めてください。 制約 $K$は$1$以">
-<meta property="og:title" content="ABC234-CDE - パンダ好き">
+<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/data_analysis_20230307/ title=パンダ好き>
+<meta name=description content="既に10本単位じゃなくなってるのウケるな。 今回は少しのデータクレンジングを体験する感じ。 ノック11/12 データを読み込んでみよう/データの揺">
+<meta property="og:title" content="データ分析100本ノック(11-15) - パンダ好き">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ryongyong.github.io/post/atcoder/abc234-cde/">
+<meta property="og:url" content="https://ryongyong.github.io/post/study/data_analysis_20230307/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="C - Happy New Year! 問題文 $10$進法で表記したときに$0,2$のみからなる正整数のうち、 $K$番目に小さいものを求めてください。 制約 $K$は$1$以">
+<meta property="og:description" content="既に10本単位じゃなくなってるのウケるな。 今回は少しのデータクレンジングを体験する感じ。 ノック11/12 データを読み込んでみよう/データの揺">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
-<meta name=twitter:url content="https://ryongyong.github.io/post/atcoder/abc234-cde/">
-<meta name=twitter:title content="ABC234-CDE - パンダ好き">
-<meta name=twitter:description content="C - Happy New Year! 問題文 $10$進法で表記したときに$0,2$のみからなる正整数のうち、 $K$番目に小さいものを求めてください。 制約 $K$は$1$以">
+<meta name=twitter:url content="https://ryongyong.github.io/post/study/data_analysis_20230307/">
+<meta name=twitter:title content="データ分析100本ノック(11-15) - パンダ好き">
+<meta name=twitter:description content="既に10本単位じゃなくなってるのウケるな。 今回は少しのデータクレンジングを体験する感じ。 ノック11/12 データを読み込んでみよう/データの揺">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"ABC234-CDE-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-20T03:02:37JST","dateModified":"2023-02-20T03:02:37JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"C - Happy New Year! 問題文 $10$進法で表記したときに$0,2$のみからなる正整数のうち、 $K$番目に小さいものを求めてください。 制約 $K$は$1$以"}</script>
-<link rel=canonical href=https://ryongyong.github.io/post/atcoder/abc234-cde/>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"データ分析100本ノック(11-15)-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-07T00:24:42JST","dateModified":"2023-03-07T00:24:42JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"既に10本単位じゃなくなってるのウケるな。 今回は少しのデータクレンジングを体験する感じ。 ノック11\/12 データを読み込んでみよう\/データの揺"}</script>
+<link rel=canonical href=https://ryongyong.github.io/post/study/data_analysis_20230307/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -53,207 +53,93 @@
 <div class=mrow>
 <div class="mcol c8">
 <article class=sn>
-<div class="thumb thumb-fbfc181d9bdeef40ae76d7484f074849"></div>
+<div class="thumb thumb-6462b66d7eae0fdcc0ac27c8197b4d2d"></div>
 <header class=article-header>
-<h1 class=title>ABC234-CDE</h1>
+<h1 class=title>データ分析100本ノック(11-15)</h1>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-20T03:02:37JST>Feb 20, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-03-07T00:24:42JST>Mar 7, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
 </ul>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&title=ABC234-CDE" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&text=ABC234-CDE&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&t=ABC234-CDE" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&title=ABC234-CDE" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&text=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&t=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 </header>
-<div class=article-body><h2 id=c---happy-new-year>C - Happy New Year!</h2>
-<h3 id=問題文>問題文</h3>
-<p>$10$進法で表記したときに$0,2$のみからなる正整数のうち、
-$K$番目に小さいものを求めてください。</p>
-<h3 id=制約>制約</h3>
+<div class=article-body><p>既に10本単位じゃなくなってるのウケるな。
+今回は少しのデータクレンジングを体験する感じ。</p>
+<h3 id=ノック1112-データを読み込んでみようデータの揺れを見てみよう>ノック11/12 データを読み込んでみよう/データの揺れを見てみよう</h3>
 <ul>
-<li>$K$は$1$以上$10^{18}$以下の整数</li>
+<li>読み込み</li>
 </ul>
-<h3 id=解法>解法</h3>
-<p>問題が$0,1$のみからなる正整数だった時を考える。これはある正整数を$2$進数で書き直したものが正解となる。例えば、小さいのものから</p>
-<ul>
-<li>$0 = 0_2$</li>
-<li>$1 = 1_2$</li>
-<li>$2 = 10_2$</li>
-<li>$3 = 11_2$</li>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3><span style=color:#f92672>import</span> pandas <span style=color:#66d9ef>as</span> pd 
+uriage_data <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_csv(<span style=color:#e6db74>&#34;../data/uriage.csv&#34;</span>)
+uriage_data<span style=color:#f92672>.</span>head()
+</code></pre></div><ul>
+<li>excelデータの読み込み</li>
 </ul>
-<p>というふうになる。<br>
-この問題では、$K$を2進数で表した時に、現れる$1$を$2$に変えるとACする。<br>
-私は基数を変換するライブラリがあったので、文字列として受け取り、文字列として$2$進数に変換し、その文字列中の$1$を$2$に変更した。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp>
-
-<span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Radix</span> {
-<span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
-  <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> s;
-  <span style=color:#66d9ef>int</span> a[<span style=color:#ae81ff>128</span>];
-<span style=color:#66d9ef>public</span><span style=color:#f92672>:</span>
-  Radix(<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> s <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0123456789ABCDEF&#34;</span>) <span style=color:#f92672>:</span> s(s) {
-    <span style=color:#66d9ef>int</span> i;
-    <span style=color:#66d9ef>for</span>(i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; s[i]; <span style=color:#f92672>++</span>i)
-      a[(<span style=color:#66d9ef>int</span>)s[i]] <span style=color:#f92672>=</span> i;
-  }
-  std<span style=color:#f92672>::</span>string to(<span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> p, <span style=color:#66d9ef>int</span> q) {
-    <span style=color:#66d9ef>int</span> i;
-    <span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span>p)
-      <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;0&#34;</span>;
-    <span style=color:#66d9ef>char</span> t[<span style=color:#ae81ff>64</span>] <span style=color:#f92672>=</span> { };
-    <span style=color:#66d9ef>for</span>(i <span style=color:#f92672>=</span> <span style=color:#ae81ff>62</span>; p; <span style=color:#f92672>--</span>i) {
-      t[i] <span style=color:#f92672>=</span> s[p <span style=color:#f92672>%</span> q];
-      p <span style=color:#f92672>/=</span> q;
-    }
-    <span style=color:#66d9ef>return</span> std<span style=color:#f92672>::</span>string(t <span style=color:#f92672>+</span> i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
-  }
-  std<span style=color:#f92672>::</span>string to(<span style=color:#66d9ef>const</span> std<span style=color:#f92672>::</span>string<span style=color:#f92672>&amp;</span> t, <span style=color:#66d9ef>int</span> p, <span style=color:#66d9ef>int</span> q) {
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>to</span>(to(t, p), q);
-  }
-  <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> <span style=color:#a6e22e>to</span>(<span style=color:#66d9ef>const</span> std<span style=color:#f92672>::</span>string<span style=color:#f92672>&amp;</span> t, <span style=color:#66d9ef>int</span> p) {
-    <span style=color:#66d9ef>int</span> i;
-    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> sm <span style=color:#f92672>=</span> a[(<span style=color:#66d9ef>int</span>)t[<span style=color:#ae81ff>0</span>]];
-    <span style=color:#66d9ef>for</span>(i <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>)t.length(); <span style=color:#f92672>++</span>i)
-      sm <span style=color:#f92672>=</span> sm <span style=color:#f92672>*</span> p <span style=color:#f92672>+</span> a[(<span style=color:#66d9ef>int</span>)t[i]];
-    <span style=color:#66d9ef>return</span> sm;
-  }
-};
-
-<span style=color:#75715e>/*
-</span><span style=color:#75715e>int main() {
-</span><span style=color:#75715e>    Radix r;
-</span><span style=color:#75715e>    // 10 進数を n 進文字列に
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(255, 10) &lt;&lt; std::endl; // =&gt; &#34;255&#34;
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(255, 12) &lt;&lt; std::endl; // =&gt; &#34;193&#34;
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(255, 16) &lt;&lt; std::endl; // =&gt; &#34;FF&#34;
-</span><span style=color:#75715e>
-</span><span style=color:#75715e>    // n 進文字列を 10 進数に
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(&#34;255&#34;, 10) &lt;&lt; std::endl; // =&gt; 255
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(&#34;255&#34;, 14) &lt;&lt; std::endl; // =&gt; 467
-</span><span style=color:#75715e>
-</span><span style=color:#75715e>    // n 進文字列を m 進文字列に
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(&#34;255&#34;, 7, 11) &lt;&lt; std::endl; // =&gt; &#34;116&#34;
-</span><span style=color:#75715e>    std::cout &lt;&lt; r.to(&#34;255&#34;, 11, 7) &lt;&lt; std::endl; // =&gt; &#34;611&#34;
-</span><span style=color:#75715e>    return 0;
-</span><span style=color:#75715e>}
-</span><span style=color:#75715e>
-</span><span style=color:#75715e>*/</span>
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-  string K ;
-  cin <span style=color:#f92672>&gt;&gt;</span> K ; 
-  Radix r ; 
-  string ans <span style=color:#f92672>=</span> r.to(K , <span style=color:#ae81ff>10</span> , <span style=color:#ae81ff>2</span>) ; 
-
-  <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> (<span style=color:#66d9ef>int</span>)ans.size() ; i<span style=color:#f92672>++</span>){
-    <span style=color:#66d9ef>if</span>(ans.at(i) <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;1&#39;</span>) cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>2</span> ; 
-    <span style=color:#66d9ef>else</span> cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#ae81ff>0</span> ; 
-  }
-
-  cout <span style=color:#f92672>&lt;&lt;</span> endl;
-
-}
-</code></pre></div><h2 id=d---prefix-k-th-max>D - Prefix K-th Max</h2>
-<h3 id=問題文-1>問題文</h3>
-<p>$(1,2,…,N)$ の順列
-$P=(P_1,P_2,&mldr;,P_N)$、および正整数$K$が与えられます。<br>
-$i=K,K+1,&mldr;,N$について、以下を求めてください。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>kokyaku_data <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>read_excel(<span style=color:#e6db74>&#34;../data/kokyaku_daicho.xlsx&#34;</span>)
+kokyaku_data<span style=color:#f92672>.</span>head()
+</code></pre></div><ul>
+<li>item_nameに表記揺れ
 <ul>
-<li>$P$の先頭$i$項のうち、$K$番目に大きい値</li>
-</ul>
-<h3 id=制約-1>制約</h3>
-<ul>
-<li>$1≤K≤N≤5×10^5$</li>
-<li>$(P_1,P_2,…,P_N)$は$(1,2,…,N)$の並び替えによって得られる</li>
-<li>入力はすべて整数</li>
-</ul>
-<h3 id=解法-1>解法</h3>
-<p>最初にSetにK個目までの要素を突っ込む。大きいものからK番目に大きいものはSetの先頭( *set.begin() )である。<br>
-ここから順に$K$以上の$P$の要素を突っ込んでいく。この時に今現在の( *set.begin() )よりも大きい値が入ってくると、大きいものから見て順番が$1$個ずれる。よってインクリメントしたものが答え。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
-
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-   <span style=color:#66d9ef>int</span> N , K ;
-   cin <span style=color:#f92672>&gt;&gt;</span> N <span style=color:#f92672>&gt;&gt;</span> K ; 
-   vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> P(N) ; 
-   <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>) cin <span style=color:#f92672>&gt;&gt;</span> P.at(i) ; 
-   set<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> st ; 
-   <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; i <span style=color:#f92672>&lt;</span> K ; i<span style=color:#f92672>++</span>) st.insert(P.at(i)) ; 
-
-   <span style=color:#66d9ef>auto</span> itr <span style=color:#f92672>=</span> st.begin(); 
-   cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#f92672>*</span>itr<span style=color:#f92672>&lt;&lt;</span> endl;
-
-   <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> K ; i <span style=color:#f92672>&lt;</span> N ; i<span style=color:#f92672>++</span>){
-       st.insert(P.at(i)) ; 
-       <span style=color:#66d9ef>if</span>(<span style=color:#f92672>*</span>itr <span style=color:#f92672>&lt;</span> P.at(i)) itr<span style=color:#f92672>++</span> ; 
-       cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#f92672>*</span>itr <span style=color:#f92672>&lt;&lt;</span> endl;
-   }
-
-}
-
-</code></pre></div><h2 id=e---arithmetic-number>E - Arithmetic Number</h2>
-<h3 id=問題文-2>問題文</h3>
-<p>以下の条件を満たす正の整数$n$を、 等差数 と呼びます。</p>
-<ul>
-<li>($n$を先頭に余計な$0$を付けずに$10$進法で表記した際)$n$の上から$i$桁目を$d_i$とする。このとき、$n$が
-$k$桁の整数であったとすると、$(d_2, −d_1)=(d_3 − d_2)=&mldr;=(d_k − d_{k-1} )$が成立する。
-<ul>
-<li>この条件は、「 数列$(d_1 , d_2 , &mldr; , d_k)$が等差数列である」と言い換えることができる。</li>
-<li>但し、$n$が$1$桁の整数である時、$n$は等差数であるものとする。たとえば、$234,369,86420,17,95,8,11,777$は等差数ですが、$751,919,2022,246810,2356$は等差数ではありません。</li>
+<li>大文字小文字、変なスペースがあったりする</li>
 </ul>
 </li>
 </ul>
-<p>等差数のうち、$X$以上で最小のものを求めてください。</p>
-<h3 id=制約-2>制約</h3>
-<p>$X$は$1$以上$10^{17}$以下の整数である</p>
-<h3 id=解法-2>解法</h3>
-<p>数列の項の値は必ず1桁でなければならない。なので、実は候補はそんなに多くない。
-初項、公差を全探索し、出来上がった数列に対して$min$を取ればACする。</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-cpp data-lang=cpp><span style=color:#75715e>#include</span><span style=color:#75715e>&lt;bits/stdc++.h&gt;</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> <span style=color:#66d9ef>namespace</span> std ;
+<h3 id=ノック13-データに揺れがあるまま集計してみよう>ノック13 データに揺れがあるまま集計してみよう</h3>
+<ul>
+<li>商品番号はA-Zまでのローマ字であるのに、小文字が混じっていたり、文字の間にスペースがある</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>uriage_data[<span style=color:#e6db74>&#34;purchase_date&#34;</span>] <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>to_datetime(uriage_data[<span style=color:#e6db74>&#34;purchase_date&#34;</span>])
+uriage_data[<span style=color:#e6db74>&#34;purchase_month&#34;</span>] <span style=color:#f92672>=</span> uriage_data[<span style=color:#e6db74>&#34;purchase_date&#34;</span>]<span style=color:#f92672>.</span>dt<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y%m&#34;</span>)
+res <span style=color:#f92672>=</span> uriage_data<span style=color:#f92672>.</span>pivot_table(index <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;purchase_month&#34;</span>, columns <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;item_name&#34;</span>, aggfunc <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;size&#34;</span>, fill_value <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> )
+</code></pre></div><h3 id=ノック14-商品名の揺れを補正しよう>ノック14 商品名の揺れを補正しよう</h3>
+<ul>
+<li>str.upper()で大文字に変換</li>
+<li>str.replace(&ldquo;a&rdquo; , &ldquo;b&rdquo;)で文字aを文字bに変換</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>] <span style=color:#f92672>=</span> uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>]<span style=color:#f92672>.</span>str<span style=color:#f92672>.</span>upper()
+uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>] <span style=color:#f92672>=</span> uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>]<span style=color:#f92672>.</span>str<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34; &#34;</span> , <span style=color:#e6db74>&#34;&#34;</span>)
+uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>] <span style=color:#f92672>=</span> uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>]<span style=color:#f92672>.</span>str<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;  &#34;</span> , <span style=color:#e6db74>&#34;&#34;</span>)
+</code></pre></div><h3 id=ノック15-データを読み込んでみよう>ノック15 データを読み込んでみよう</h3>
+<ul>
+<li>欠損値、ここではnullチェック
+<ul>
+<li>nullが1つでもあるカラムを検索</li>
+</ul>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>uriage_data<span style=color:#f92672>.</span>isnull()<span style=color:#f92672>.</span>any(axis <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> )
+</code></pre></div><ul>
+<li>nullのある箇所を探す</li>
+<li>同じアイテム名であり、nullでないものから、価格を抜き出す</li>
+<li>抜き出した価格で修正</li>
+<li>locは複数要素抽出できる</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>flg_is_null <span style=color:#f92672>=</span> uriage_data[<span style=color:#e6db74>&#34;item_price&#34;</span>]<span style=color:#f92672>.</span>isnull()
 
-<span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(){
-    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> x ;
-    cin <span style=color:#f92672>&gt;&gt;</span> x ; 
-    <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> ans <span style=color:#f92672>=</span> <span style=color:#ae81ff>2e18</span> ; 
-    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> s <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> ; s <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>9</span> ; s<span style=color:#f92672>++</span>){<span style=color:#75715e>//初項
-</span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> d <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>9</span> ; d <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>8</span> ; d<span style=color:#f92672>++</span>){<span style=color:#75715e>//公差
-</span><span style=color:#75715e></span>            <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> a <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> ; 
-            <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> s  ; <span style=color:#ae81ff>0</span> <span style=color:#f92672>&lt;=</span> i <span style=color:#f92672>&amp;&amp;</span> i <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>9</span> ; i <span style=color:#f92672>+=</span> d ){
-                a <span style=color:#f92672>=</span> a<span style=color:#f92672>*</span><span style=color:#ae81ff>10</span> <span style=color:#f92672>+</span> i ; 
-                <span style=color:#66d9ef>if</span>(a <span style=color:#f92672>&gt;=</span> x){
-                    ans <span style=color:#f92672>=</span> min(ans ,a) ; 
-                    <span style=color:#66d9ef>break</span> ; 
-                }
-            }
-        }
-    }
-
-    cout <span style=color:#f92672>&lt;&lt;</span> ans <span style=color:#f92672>&lt;&lt;</span> endl;
-}
-
+<span style=color:#66d9ef>for</span> trg <span style=color:#f92672>in</span> list(uriage_data<span style=color:#f92672>.</span>loc[flg_is_null, <span style=color:#e6db74>&#34;item_name&#34;</span>]<span style=color:#f92672>.</span>unique()):
+    price <span style=color:#f92672>=</span> uriage_data<span style=color:#f92672>.</span>loc[(<span style=color:#f92672>~</span>flg_is_null) <span style=color:#f92672>&amp;</span> (uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>] <span style=color:#f92672>==</span> trg), <span style=color:#e6db74>&#34;item_price&#34;</span> ]<span style=color:#f92672>.</span>max()
+    uriage_data[<span style=color:#e6db74>&#34;item_price&#34;</span>]<span style=color:#f92672>.</span>loc[(flg_is_null) <span style=color:#f92672>&amp;</span> (uriage_data[<span style=color:#e6db74>&#34;item_name&#34;</span>] <span style=color:#f92672>==</span> trg)] <span style=color:#f92672>=</span> price
 </code></pre></div></div>
 <footer class=article-footer>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&title=ABC234-CDE" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&text=ABC234-CDE&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&t=ABC234-CDE" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f&title=ABC234-CDE" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fatcoder%2fabc234-cde%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&text=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&t=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2811-15%29" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_20230307%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 <section class=footer>
 <header>
 <a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/categories/atcoder/>AtCoder</a></li>
+<li><a href=https://ryongyong.github.io/categories/study/>Study</a></li>
+<li><a href=https://ryongyong.github.io/categories/data-science/>Data-Science</a></li>
 </ul>
 </section>
 <section class=footer>
@@ -261,8 +147,8 @@ $k$桁の整数であったとすると、$(d_2, −d_1)=(d_3 − d_2)=&mldr;=(d
 <a href=https://ryongyong.github.io/tags/>TAGS</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/tags/atcoder/>Atcoder</a></li>
-<li><a href=https://ryongyong.github.io/tags/c++/>C++</a></li>
+<li><a href=https://ryongyong.github.io/tags/python/>Python</a></li>
+<li><a href=https://ryongyong.github.io/tags/data-analysis/>Data-Analysis</a></li>
 </ul>
 </section>
 </footer>
@@ -270,28 +156,16 @@ $k$桁の整数であったとすると、$(d_2, −d_1)=(d_3 − d_2)=&mldr;=(d
 <div class="adj mrow">
 <div class="mcol c6">
 <header>Next Article</header>
-<article class=lism>
-<a href=https://ryongyong.github.io/post/atcoder/abc223-vertual/>
-<div class="thumb thumb-cf3275af366629424ad46aa859c30946"></div>
-<div class=inner>
-<div class=title>ABC223-ABCD</div>
-<ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=21007-02-21T00:57:39JST>Feb 21, 2023</time></li>
-<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
-</ul>
-</div>
-</a>
-</article>
 </div>
 <div class="mcol c6">
 <header>Previous Article</header>
 <article class=lism>
-<a href=https://ryongyong.github.io/post/dialy/20230219/>
-<div class="thumb thumb-cb845f5e611126870c62395be518665b"></div>
+<a href=https://ryongyong.github.io/post/study/data_analysis_20230306/>
+<div class="thumb thumb-d27297294a13b8e5ca4da14af8545c7d"></div>
 <div class=inner>
-<div class=title>2023年02月17, 18日</div>
+<div class=title>データ分析100本ノック(1-10)</div>
 <ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=19007-02-19T23:33:23JST>Feb 19, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=6007-03-06T19:36:48JST>Mar 6, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 </div>
