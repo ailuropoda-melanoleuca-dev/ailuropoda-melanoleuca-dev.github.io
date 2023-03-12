@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset=utf-8>
-<title>2023年02月17, 18日 - パンダ好き</title>
+<title>データ分析100本ノック(16-20) - パンダ好き</title>
 <meta name=pinterest content="nopin">
 <meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
 <link rel="dns-prefetch preconnect" href=https://fonts.gstatic.com crossorigin>
@@ -17,23 +17,23 @@
 <meta name=theme-color content="#263238">
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
-<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/dialy/20230219/ title=パンダ好き>
-<meta name=description content="2023年02月17日 現職での同僚であり友人が退職するとのことで、卒業式をやった。 仲間内だけでの会ではあったが、10人が参加した。そのうち転">
-<meta property="og:title" content="2023年02月17, 18日 - パンダ好き">
+<link rel=amphtml type=text/html href=https://ryongyong.github.io/amp/post/study/data_analysis_202303012/ title=パンダ好き>
+<meta name=description content="ノック16 顧客名の揺れを補正しよう str.replace()で消す。 kokyaku_data[&#34;顧客名&#34;] = kokyaku_">
+<meta property="og:title" content="データ分析100本ノック(16-20) - パンダ好き">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ryongyong.github.io/post/dialy/20230219/">
+<meta property="og:url" content="https://ryongyong.github.io/post/study/data_analysis_202303012/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="2023年02月17日 現職での同僚であり友人が退職するとのことで、卒業式をやった。 仲間内だけでの会ではあったが、10人が参加した。そのうち転">
+<meta property="og:description" content="ノック16 顧客名の揺れを補正しよう str.replace()で消す。 kokyaku_data[&#34;顧客名&#34;] = kokyaku_">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
-<meta name=twitter:url content="https://ryongyong.github.io/post/dialy/20230219/">
-<meta name=twitter:title content="2023年02月17, 18日 - パンダ好き">
-<meta name=twitter:description content="2023年02月17日 現職での同僚であり友人が退職するとのことで、卒業式をやった。 仲間内だけでの会ではあったが、10人が参加した。そのうち転">
+<meta name=twitter:url content="https://ryongyong.github.io/post/study/data_analysis_202303012/">
+<meta name=twitter:title content="データ分析100本ノック(16-20) - パンダ好き">
+<meta name=twitter:description content="ノック16 顧客名の揺れを補正しよう str.replace()で消す。 kokyaku_data[&#34;顧客名&#34;] = kokyaku_">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"2023年02月17, 18日-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-02-19T23:33:23JST","dateModified":"2023-02-19T23:33:23JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"2023年02月17日 現職での同僚であり友人が退職するとのことで、卒業式をやった。 仲間内だけでの会ではあったが、10人が参加した。そのうち転"}</script>
-<link rel=canonical href=https://ryongyong.github.io/post/dialy/20230219/>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"データ分析100本ノック(16-20)-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-12T20:16:06JST","dateModified":"2023-03-12T20:16:06JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"ノック16 顧客名の揺れを補正しよう str.replace()で消す。 kokyaku_data[\u0026#34;顧客名\u0026#34;] = kokyaku_"}</script>
+<link rel=canonical href=https://ryongyong.github.io/post/study/data_analysis_202303012/>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
@@ -53,48 +53,78 @@
 <div class=mrow>
 <div class="mcol c8">
 <article class=sn>
-<div class="thumb thumb-cb845f5e611126870c62395be518665b"></div>
+<div class="thumb thumb-a95acc62518cb38da732504548b65cf4"></div>
 <header class=article-header>
-<h1 class=title>2023年02月17, 18日</h1>
+<h1 class=title>データ分析100本ノック(16-20)</h1>
 <ul class=facts>
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-02-19T23:33:23JST>Feb 19, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=2023-03-12T20:16:06JST>Mar 12, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i><a href=https://ryongyong.github.io/post/>POST</a></li>
 </ul>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&title=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&text=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&t=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&title=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&text=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&t=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 </header>
-<div class=article-body><h2 id=2023年02月17日>2023年02月17日</h2>
-<p>現職での同僚であり友人が退職するとのことで、卒業式をやった。<br>
-仲間内だけでの会ではあったが、10人が参加した。そのうち転職活動中が5人(!?!?!?)。<br>
-今回退職する同僚も転職先が決まっており、Android開発をするらしい。</p>
-<p>現職は離職率が高すぎる(現状、毎年20人程度が入社し、10人程度が離職する。離職率50%)。</p>
-<h2 id=2023年02月18日>2023年02月18日</h2>
-<p>　今日は大学同期の婚姻届に証人としてサインをしてきた。とてもおめでたいことだった。</p>
-<p>　彼とは学部は違い、私は理工学部物理学科、彼は経済学部国際経済学科だったが、大学の天文サークルで親交を持つ様になった。<br>
-サークル活動以外では、いつも大学近くの串カツ屋でチンチロリンを振りながらハイボールを飲んでいたのを覚えている。 大学院では彼が別大学に離れたものの、大阪に住んでいたため、何度か会っている。</p>
-<p>　当日は昼前にグランフロント大阪でもう一人の大学同期と結婚祝いを購入し、彼の家に向かった。</p>
-<p>　彼の家でそれぞれが婚姻届に署名し、彼と彼のお嫁さんと4人で昔話をし、3時頃に喫茶店でご飯を食べた。もう一度彼の家でダラダラと過ごしたのち、梅田で少しアルコールを入れようということになった。
-梅田ではビアホールでビール、バーでウイスキーを飲み、その後帰宅。</p>
-</div>
+<div class=article-body><h3 id=ノック16-顧客名の揺れを補正しよう>ノック16 顧客名の揺れを補正しよう</h3>
+<ul>
+<li>str.replace()で消す。</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>kokyaku_data[<span style=color:#e6db74>&#34;顧客名&#34;</span>] <span style=color:#f92672>=</span> kokyaku_data[<span style=color:#e6db74>&#34;顧客名&#34;</span>]<span style=color:#f92672>.</span>str<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34; &#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>) 
+kokyaku_data[<span style=color:#e6db74>&#34;顧客名&#34;</span>] <span style=color:#f92672>=</span> kokyaku_data[<span style=color:#e6db74>&#34;顧客名&#34;</span>]<span style=color:#f92672>.</span>str<span style=color:#f92672>.</span>replace(<span style=color:#e6db74>&#34;　&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>) 
+kokyaku_data[<span style=color:#e6db74>&#34;顧客名&#34;</span>]<span style=color:#f92672>.</span>head()
+</code></pre></div><h3 id=ノック17-日付の揺れを補正しよう>ノック17 日付の揺れを補正しよう</h3>
+<ul>
+<li>excelの書式が整っていないので、登録日に変な値が入っているものがある</li>
+<li>とりあえずそのインデックスを計算</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>flg_is_serial <span style=color:#f92672>=</span> kokyaku_data[<span style=color:#e6db74>&#34;登録日&#34;</span>]<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;str&#34;</span>)<span style=color:#f92672>.</span>str<span style=color:#f92672>.</span>isdigit()
+</code></pre></div><ul>
+<li>書き換え</li>
+<li>floatにした後に、基準日の19900101を足して計算</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>fromSerial <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>to_timedelta(kokyaku_data<span style=color:#f92672>.</span>loc[flg_is_serial, <span style=color:#e6db74>&#34;登録日&#34;</span>]<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;float&#34;</span>), unit <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;D&#34;</span>) <span style=color:#f92672>+</span> pd<span style=color:#f92672>.</span>to_datetime(<span style=color:#e6db74>&#34;1900/01/01&#34;</span>)
+</code></pre></div><ul>
+<li>最後にそれぞれ書式を揃えてconcat</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>fromString <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>to_datetime(kokyaku_data<span style=color:#f92672>.</span>loc[<span style=color:#f92672>~</span>flg_is_serial , <span style=color:#e6db74>&#34;登録日&#34;</span>])
+kokyaku_data[<span style=color:#e6db74>&#34;登録日&#34;</span>] <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>concat([fromSerial , fromString])
+</code></pre></div><h3 id=ノック18顧客名をキーに２つのデータを結合しよう>ノック18　顧客名をキーに２つのデータを結合しよう</h3>
+<ul>
+<li>もう何回もやったので省略</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>join_data <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</span>merge(uriage_data, kokyaku_data, left_on<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;customer_name&#34;</span>, right_on <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;顧客名&#34;</span>, how <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;left&#34;</span>)
+join_data <span style=color:#f92672>=</span> join_data<span style=color:#f92672>.</span>drop(<span style=color:#e6db74>&#34;customer_name&#34;</span> , axis <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>)
+join_data
+</code></pre></div><h3 id=ノック19クレンジングしたデータをダンプしよう>ノック19　クレンジングしたデータをダンプしよう</h3>
+<ul>
+<li>データの保存</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>dump_data <span style=color:#f92672>=</span> join_data[[<span style=color:#e6db74>&#34;purchase_date&#34;</span>, <span style=color:#e6db74>&#34;purchase_month&#34;</span>, <span style=color:#e6db74>&#34;item_name&#34;</span> , <span style=color:#e6db74>&#34;item_price&#34;</span> , <span style=color:#e6db74>&#34;顧客名&#34;</span> , <span style=color:#e6db74>&#34;かな&#34;</span> , <span style=color:#e6db74>&#34;地域&#34;</span> , <span style=color:#e6db74>&#34;メールアドレス&#34;</span> , <span style=color:#e6db74>&#34;登録日&#34;</span>]]
+dump_data<span style=color:#f92672>.</span>to_csv(<span style=color:#e6db74>&#34;dump_data.csv&#34;</span> , index <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>)
+</code></pre></div><h3 id=ノック20-データを集計しよう>ノック20 データを集計しよう</h3>
+<ul>
+<li>ピボットテーブルを使っての集計は既に何度かやったので、省略</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python3 data-lang=python3>byItem <span style=color:#f92672>=</span> dump_data<span style=color:#f92672>.</span>pivot_table(index <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;purchase_month&#34;</span> , columns <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;item_name&#34;</span> , aggfunc <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;size&#34;</span> , fill_value <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span> )
+byItem
+</code></pre></div></div>
 <footer class=article-footer>
 <aside class=share>
-<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&title=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
-<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&text=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
-<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&t=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
-<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f&title=2023%e5%b9%b402%e6%9c%8817%2c%2018%e6%97%a5" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
-<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fdialy%2f20230219%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
+<a href="https://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29" title=はてなブックマーク class=ht target=_blank rel="noopener nofollow">B!</a>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&text=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel="noopener nofollow"><i class="fab fa-twitter" aria-hidden=true></i></a>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&t=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29" title=Facebookでシェア class=fb target=_blank rel="noopener nofollow"><i class="fab fa-facebook" aria-hidden=true></i></a>
+<a href="https://getpocket.com/edit?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f&title=%e3%83%87%e3%83%bc%e3%82%bf%e5%88%86%e6%9e%90100%e6%9c%ac%e3%83%8e%e3%83%83%e3%82%af%2816-20%29" title=Pocketに保存 class=pk target=_blank rel="noopener nofollow"><i class="fab fa-get-pocket" aria-hidden=true></i></a>
+<a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2fpost%2fstudy%2fdata_analysis_202303012%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 <section class=footer>
 <header>
 <a href=https://ryongyong.github.io/categories/>CATEGORIES</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/categories/dialy/>Dialy</a></li>
+<li><a href=https://ryongyong.github.io/categories/data-science/>Data-Science</a></li>
 </ul>
 </section>
 <section class=footer>
@@ -102,7 +132,8 @@
 <a href=https://ryongyong.github.io/tags/>TAGS</a>
 </header>
 <ul class=terms>
-<li><a href=https://ryongyong.github.io/tags/dialy/>Dialy</a></li>
+<li><a href=https://ryongyong.github.io/tags/python/>Python</a></li>
+<li><a href=https://ryongyong.github.io/tags/data-analysis/>Data-Analysis</a></li>
 </ul>
 </section>
 </footer>
@@ -110,28 +141,16 @@
 <div class="adj mrow">
 <div class="mcol c6">
 <header>Next Article</header>
-<article class=lism>
-<a href=https://ryongyong.github.io/post/atcoder/abc234-cde/>
-<div class="thumb thumb-fbfc181d9bdeef40ae76d7484f074849"></div>
-<div class=inner>
-<div class=title>ABC234-CDE</div>
-<ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=20007-02-20T03:02:37JST>Feb 20, 2023</time></li>
-<li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
-</ul>
-</div>
-</a>
-</article>
 </div>
 <div class="mcol c6">
 <header>Previous Article</header>
 <article class=lism>
-<a href=https://ryongyong.github.io/post/atcoder/abc237-vertual/>
-<div class="thumb thumb-9d8de16ad11eff1fb66c1c781dac8ad5"></div>
+<a href=https://ryongyong.github.io/post/study/data_analysis_20230307/>
+<div class="thumb thumb-6462b66d7eae0fdcc0ac27c8197b4d2d"></div>
 <div class=inner>
-<div class=title>ABC237(途中までバーチャル参加)</div>
+<div class=title>データ分析100本ノック(11-15)</div>
 <ul class="facts sm">
-<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=17007-02-17T03:16:18JST>Feb 17, 2023</time></li>
+<li><i class="fas fa-calendar" aria-hidden=true></i><time datetime=7007-03-07T00:24:42JST>Mar 7, 2023</time></li>
 <li><i class="fas fa-bookmark" aria-hidden=true></i>POST</li>
 </ul>
 </div>
