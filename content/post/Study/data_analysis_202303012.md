@@ -2,7 +2,7 @@
 draft = false
 thumbnail = ""
 tags = ["Python", "Data-Analysis"]
-categories = ["Data-Science"]
+categories = ["Data-Science", "Study"]
 date = "2023-03-12T20:16:06+09:00"
 title = "データ分析100本ノック(16-20)"
 description = ""
