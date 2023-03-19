@@ -11,21 +11,21 @@
 <meta name=generator content="Hugo 0.91.2">
 <link rel=apple-touch-icon href=https://ryongyong.github.io/images/logo.png>
 <link rel=canonical type=text/html href=https://ryongyong.github.io/post/study/data_analysis_202303020/ title=パンダ好き>
-<meta name=description content="ノック21 読み込んでデータ確認 import pandas as pd uselog = pd.read_csv(&#34;../data/use_log.csv&#34;) customer = pd.read_csv(&#34;../data/customer_master.csv&#34;) class_master = pd.read_csv(&#34;../data/class_master.csv&#34;) campaign_master = pd.read_csv(&#34;../data/campaign_master.csv&#34;) print(len(uselog)) uselog.head() customer.head() class_master.head() campaign_master.head() ノック22 それぞれどのキーを使えば良いか考えて、データをマージする customer_join">
+<meta name=description content="今回からはジムの顧客データを使って機械学習タスクをやるらしい。 今回の10本ノックは主にデータの把握 ノック21 読み込んでデータ確認 import pandas as pd uselog =">
 <meta property="og:title" content="データ分析100本ノック(21-30) - パンダ好き">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ryongyong.github.io/amp/post/study/data_analysis_202303020/">
 <meta property="og:image" content="https://ryongyong.github.io/images/default.png">
 <meta property="og:site_name" content="パンダ好き">
-<meta property="og:description" content="ノック21 読み込んでデータ確認 import pandas as pd uselog = pd.read_csv(&#34;../data/use_log.csv&#34;) customer = pd.read_csv(&#34;../data/customer_master.csv&#34;) class_master = pd.read_csv(&#34;../data/class_master.csv&#34;) campaign_master = pd.read_csv(&#34;../data/campaign_master.csv&#34;) print(len(uselog)) uselog.head() customer.head() class_master.head() campaign_master.head() ノック22 それぞれどのキーを使えば良いか考えて、データをマージする customer_join">
+<meta property="og:description" content="今回からはジムの顧客データを使って機械学習タスクをやるらしい。 今回の10本ノックは主にデータの把握 ノック21 読み込んでデータ確認 import pandas as pd uselog =">
 <meta property="og:locale" content="ja_JP">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:site content="パンダ好き">
 <meta name=twitter:url content="https://ryongyong.github.io/amp/post/study/data_analysis_202303020/">
 <meta name=twitter:title content="データ分析100本ノック(21-30) - パンダ好き">
-<meta name=twitter:description content="ノック21 読み込んでデータ確認 import pandas as pd uselog = pd.read_csv(&#34;../data/use_log.csv&#34;) customer = pd.read_csv(&#34;../data/customer_master.csv&#34;) class_master = pd.read_csv(&#34;../data/class_master.csv&#34;) campaign_master = pd.read_csv(&#34;../data/campaign_master.csv&#34;) print(len(uselog)) uselog.head() customer.head() class_master.head() campaign_master.head() ノック22 それぞれどのキーを使えば良いか考えて、データをマージする customer_join">
+<meta name=twitter:description content="今回からはジムの顧客データを使って機械学習タスクをやるらしい。 今回の10本ノックは主にデータの把握 ノック21 読み込んでデータ確認 import pandas as pd uselog =">
 <meta name=twitter:image content="https://ryongyong.github.io/images/default.png">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"データ分析100本ノック(21-30)-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-20T01:50:15JST","dateModified":"2023-03-20T01:50:15JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"ノック21 読み込んでデータ確認 import pandas as pd uselog = pd.read_csv(\u0026#34;..\/data\/use_log.csv\u0026#34;) customer = pd.read_csv(\u0026#34;..\/data\/customer_master.csv\u0026#34;) class_master = pd.read_csv(\u0026#34;..\/data\/class_master.csv\u0026#34;) campaign_master = pd.read_csv(\u0026#34;..\/data\/campaign_master.csv\u0026#34;) print(len(uselog)) uselog.head() customer.head() class_master.head() campaign_master.head() ノック22 それぞれどのキーを使えば良いか考えて、データをマージする customer_join"}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/ryongyong.github.io\/"},"headline":"データ分析100本ノック(21-30)-パンダ好き","image":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images\/default.png","height":800,"width":800},"datePublished":"2023-03-20T01:50:15JST","dateModified":"2023-03-20T01:50:15JST","author":{"@type":"Person","name":"パンダ好き"},"publisher":{"@type":"Organization","name":"パンダ好き","logo":{"@type":"ImageObject","url":"https:\/\/ryongyong.github.io\/images/logo.png","width":600,"height":60}},"description":"今回からはジムの顧客データを使って機械学習タスクをやるらしい。 今回の10本ノックは主にデータの把握 ノック21 読み込んでデータ確認 import pandas as pd uselog ="}</script>
 <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel=stylesheet>
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.13.0/css/all.css crossorigin=anonymous>
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -55,7 +55,9 @@
 <a href="https://social-plugins.line.me/lineit/share?url=https%3a%2f%2fryongyong.github.io%2famp%2fpost%2fstudy%2fdata_analysis_202303020%2f" title=LINEでシェア class=ln target=_blank rel="noopener nofollow"><i class="fab fa-line" aria-hidden=true></i></a>
 </aside>
 </header>
-<div class=article-body><h3 id=ノック21>ノック21</h3>
+<div class=article-body><p>今回からはジムの顧客データを使って機械学習タスクをやるらしい。
+今回の10本ノックは主にデータの把握</p>
+<h3 id=ノック21>ノック21</h3>
 <ul>
 <li>読み込んでデータ確認</li>
 </ul>
