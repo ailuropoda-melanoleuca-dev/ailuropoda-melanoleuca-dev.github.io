@@ -1,4 +1,4 @@
-baseURL = 'https://ryongyong.github.io/'
+baseURL = 'https://ailuropoda-melanoleuca-dev.github.io/'
 languageCode = 'ja'
 defaultContentLanguage = "ja"
 hasCJKLanguage = true
